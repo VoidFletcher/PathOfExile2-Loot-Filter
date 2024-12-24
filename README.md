@@ -63,6 +63,10 @@ The filter file can be opened and edited using a plain text editor.
 
 ---
 
+## Special Thanks
+- Path of Exile 1 & 2 Discord Community for helping me fix an issue with gem levels.
+- NeverSink's Filterblade for being there for my Path of Exile 1 playthroughs and style inspiration for this filter.
+
 ## 📜 License  
 
 This project is licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).  
