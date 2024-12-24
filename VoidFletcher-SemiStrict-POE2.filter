@@ -10,6 +10,8 @@
 # ================================================================
 # Change List:
 # ---------------------------------------------------------------
+# Version 0.2 (24 December 2024):
+# - Added initial support for Gold.
 # Version 0.1 (24 December 2024):
 # - Added initial implementation with full support for:
 #   - Currency
@@ -293,6 +295,15 @@ Show
 Show
     Class "Currency"
     BaseType "Scroll of Wisdom" "Transmutation" "Augmentation" "Alteration" "Blacksmith's Whetstone" "Arcanist's Etcher" "Artificer" "Chance Shard" "Lesser Jeweller's Orb"
+    #Wood
+        SetFontSize 22
+        SetTextColor 163 152 124
+        SetBorderColor 163 152 124
+        SetBackgroundColor 52 46 35 200
+        
+# ==== Gold (Money Tier) ========================================
+Show
+    BaseType "Gold"
     #Wood
         SetFontSize 22
         SetTextColor 163 152 124
