@@ -1,0 +1,421 @@
+# ================================================================
+#                      PATH OF EXILE 2 LOOT FILTER
+# ================================================================
+# Version:       0.1
+# Author:        VoidFletcher
+# Description:   A custom loot filter tailored for the Path of Exile 2
+#                Early Access Economy. This semi-strict filter ensures
+#                only the most valuable and relevant items appear
+#                while maintaining a clean and efficient gameplay experience.
+# ================================================================
+# Change List:
+# ---------------------------------------------------------------
+# Version 0.1 (24 December 2024):
+# - Added initial implementation with full support for:
+#   - Currency
+#   - Waystones
+#   - Skill Gems
+#   - Precursor Tablets
+#   - Delirium
+#   - Essences
+# - Updated to reflect the economy as of 24 December 2024.
+# ================================================================
+# Note: Adjustments to the filter may be necessary as the economy
+#       evolves during Early Access. Keep this file updated to
+#       stay competitive and efficient!
+#
+# TODO: Add strictness, support for item bases, hide low-value items.
+# ================================================================
+
+# ================================================================
+# Waystones
+# ================================================================
+
+# ==== Red Maps ========================================
+Show
+    BaseType "Waystone"
+    WaystoneTier >= 12
+    Rarity >= Rare
+    #Rare Red Map
+        SetTextColor 233 206 75
+        SetBorderColor 158 59 40
+        PlayAlertSound 4 300
+        PlayEffect Orange
+        MinimapIcon 1 Red Square
+        SetFontSize 32
+  
+Show
+    BaseType "Waystone"
+    WaystoneTier >= 12
+    Rarity >= Magic
+    #Magic Red Map
+        SetTextColor 122 151 254
+        SetBorderColor 158 59 40
+        PlayAlertSound 4 300
+        PlayEffect Orange
+        MinimapIcon 1 Red Square
+        SetFontSize 32
+  
+Show
+    BaseType "Waystone"
+    WaystoneTier >= 12
+    #Normal Red Map
+        SetTextColor 255 255 255
+        SetBorderColor 158 59 40
+        PlayAlertSound 4 300
+        PlayEffect Orange
+        MinimapIcon 1 Red Square
+        SetFontSize 32
+  
+# ==== Yellow Maps ========================================
+Show
+    BaseType "Waystone"
+    WaystoneTier >= 6
+    Rarity >= Rare
+    #Rare Yellow Map
+        SetTextColor 233 206 75
+        SetBorderColor 207 176 74
+        PlayAlertSound 4 300
+        PlayEffect Yellow
+        MinimapIcon 1 Yellow Square
+        SetFontSize 28
+  
+Show
+    BaseType "Waystone"
+    WaystoneTier >= 6
+    Rarity >= Magic
+    #Magic Yellow Map
+        SetTextColor 122 151 254
+        SetBorderColor 207 176 74
+        PlayAlertSound 4 300
+        PlayEffect Yellow
+        MinimapIcon 1 Yellow Square
+        SetFontSize 28
+  
+Show
+    BaseType "Waystone"
+    WaystoneTier >= 6
+    SetTextColor 255 255 255
+    SetBorderColor 207 176 74
+    PlayAlertSound 4 300
+    PlayEffect Yellow
+    MinimapIcon 1 Yellow Square
+    SetFontSize 28
+
+# ==== White Maps ========================================
+Show
+    BaseType "Waystone"
+    WaystoneTier >= 1
+    Rarity >= Rare
+    #Rare White Map
+        SetTextColor 233 206 75
+        SetBorderColor 255 255 255
+        PlayAlertSound 4 300
+        PlayEffect White
+        MinimapIcon 1 White Square
+        SetFontSize 26
+  
+Show
+    BaseType "Waystone"
+    WaystoneTier >= 1
+    Rarity >= Magic
+    #Magic White Map
+        SetTextColor 122 151 254
+        SetBorderColor 255 255 255
+        PlayAlertSound 4 300
+        PlayEffect White
+        MinimapIcon 1 White Square
+        SetFontSize 26
+  
+Show
+    BaseType "Waystone"
+    WaystoneTier >= 1
+    #Normal White Map
+        SetTextColor 255 255 255
+        SetBorderColor 255 255 255
+        PlayAlertSound 4 300
+        PlayEffect White
+        MinimapIcon 1 White Square
+        SetFontSize 26
+  
+
+# ================================================================
+# Precursor Tablets
+# ================================================================
+  
+Show
+    BaseType "Precursor Tablet"
+    Rarity >= Magic
+    #Magic Precursor Tablet
+        SetTextColor 122 151 254
+        SetBorderColor 76 14 128
+        PlayAlertSound 4 300
+        PlayEffect Purple
+        MinimapIcon 1 Purple Square
+        SetFontSize 26
+  
+Show
+    BaseType "Precursor Tablet"
+    #Normal Precursor Tablet
+        SetTextColor 255 255 255
+        SetBorderColor 76 14 128
+        PlayAlertSound 4 300
+        PlayEffect Purple
+        MinimapIcon 1 Purple Square
+        SetFontSize 26
+    
+
+# ================================================================
+# Uncut Gems
+# ================================================================
+
+# ==== Spirit Gems ========================================
+
+Show
+    BaseType "Uncut Spirit Gem"
+    ItemLevel >= 20
+    #Legendary
+        SetFontSize 45
+        SetTextColor 255 0 0 255
+        SetBorderColor 255 0 0 255
+        SetBackgroundColor 255 255 255 255
+        PlayAlertSound 6 300
+        PlayEffect Red
+        MinimapIcon 0 Red Star
+  
+Show
+    BaseType "Uncut Spirit Gem"
+    ItemLevel == 8
+    #Gold
+        SetTextColor 255 207 132
+        SetBorderColor 255 207 132
+        PlayEffect Yellow
+        PlayAlertSound 3 300
+        MinimapIcon 2 Yellow Kite
+  
+Show
+    BaseType "Uncut Spirit Gem"
+    ItemLevel <= 19
+    #Bronze
+        SetFontSize 28
+        SetTextColor 255 207 132
+        SetBorderColor 255 207 132
+        MinimapIcon 2 White Circle
+  
+  
+# ==== Skill Gems ========================================
+
+Show
+    BaseType "Uncut Skill Gem"
+    ItemLevel >= 20
+    #Legendary
+        SetFontSize 45
+        SetTextColor 255 0 0 255
+        SetBorderColor 255 0 0 255
+        SetBackgroundColor 255 255 255 255
+        PlayAlertSound 6 300
+        PlayEffect Red
+        MinimapIcon 0 Red Star
+  
+Show
+  BaseType "Uncut Skill Gem"
+  ItemLevel <= 19
+  #Bronze
+    SetFontSize 28
+    SetTextColor 255 207 132
+    SetBorderColor 255 207 132
+    MinimapIcon 2 White Circle
+    
+# ==== Support Gems ========================================
+
+Show
+    BaseType "Uncut Support Gem"
+    ItemLevel >= 1
+    #Bronze
+        SetFontSize 28
+        SetTextColor 255 207 132
+        SetBorderColor 255 207 132
+        MinimapIcon 2 White Circle
+  
+# ================================================================
+# Currency
+# ================================================================
+
+# ==== Div+ (God Tier) ========================================
+Show
+    Class "Currency"
+    BaseType "Mirror" "Divine" "Perfect Jeweller's Orb"
+    #Legendary
+        SetFontSize 45
+        SetTextColor 255 0 0 255
+        SetBorderColor 255 0 0 255
+        SetBackgroundColor 255 255 255 255
+        PlayAlertSound 6 300
+        PlayEffect Red
+        MinimapIcon 0 Red Star
+      
+# ==== MultiExalt+ (Great Tier) ========================================
+Show
+    Class "Currency"
+    BaseType "Greater Jeweller's Orb"
+    #Diamond
+            SetFontSize 36
+            SetTextColor 84 204 200
+            SetBorderColor 84 204 200
+            SetBackgroundColor 255 255 255 255
+            MinimapIcon 2 Blue Cross
+            PlayEffect Cyan
+            PlayAlertSound 4 300
+        
+# ==== Exalt+ (Good Tier) ========================================
+Show
+    Class "Currency"
+    BaseType "Exalted Orb" "Annulment" "Chaos" "Orb of Chance" "Gemcutter" "Vaal"
+    #Gold
+            SetTextColor 255 207 132
+            SetBorderColor 255 207 132
+            PlayEffect Yellow
+            PlayAlertSound 3 300
+            MinimapIcon 2 Yellow Kite
+            
+# ==== Regals+ (Decent Tier) ========================================
+Show
+    Class "Currency"
+    BaseType "Regal" "Alchemy" "Armourer's Scrap" "Glassblower's Bauble"
+    #Bronze
+        SetFontSize 28
+        SetTextColor 255 207 132
+        SetBorderColor 255 207 132
+        MinimapIcon 2 White Circle
+        
+# ==== Scrolls+ (Wood Tier) ========================================
+# Creator Note: Why tf are you picking this up?
+Show
+    Class "Currency"
+    BaseType "Scroll of Wisdom" "Transmutation" "Augmentation" "Alteration" "Blacksmith's Whetstone" "Arcanist's Etcher" "Artificer" "Chance Shard" "Lesser Jeweller's Orb"
+    #Wood
+        SetFontSize 22
+        SetTextColor 163 152 124
+        SetBorderColor 163 152 124
+        SetBackgroundColor 52 46 35 200
+
+# ================================================================
+# Essences
+# ================================================================
+
+# ==== Div+ (God Tier) ========================================
+Show
+    Class "Currency"
+    BaseType "Greater Essence of Haste"
+    #Legendary
+        SetFontSize 45
+        SetTextColor 255 0 0 255
+        SetBorderColor 255 0 0 255
+        SetBackgroundColor 255 255 255 255
+        PlayAlertSound 6 300
+        PlayEffect Red
+        MinimapIcon 0 Red Star
+
+# ==== MultiExalt+ (Great Tier) ========================================
+Show
+    Class "Currency"
+    BaseType "Greater Essence of the Mind" "Greater Essence of Enhancement" "Greater Essence of the Infinite" "Greater Essence of Electricity" "Greater Essence of Torment" "Greater Essence of Sorcery" "Greater Essence of Ruin"
+    #Diamond
+        SetFontSize 36
+        SetTextColor 84 204 200
+        SetBorderColor 84 204 200
+        SetBackgroundColor 255 255 255 255
+        MinimapIcon 2 Blue Cross
+        PlayEffect Cyan
+        PlayAlertSound 4 300
+
+# ==== Exalt+ (Good Tier) ========================================
+Show
+    Class "Currency"
+    BaseType "Greater Essence of the Body" "Greater Essence of Flames" "Greater Essence of Battle" "Greater Essence of Ice" "Essence of Electricity" "Essence of Torment" "Essence of Haste"
+    #Gold
+            SetTextColor 255 207 132
+            SetBorderColor 255 207 132
+            PlayEffect Yellow
+            PlayAlertSound 3 300
+            MinimapIcon 2 Yellow Kite
+
+# ==== Regals+ (Decent Tier) ========================================
+Show
+    Class "Currency"
+    BaseType "Essence of the Body" "Essence of the Mind" "Essence of Enhancement" "Essence of the Infinite" "Essence of Flames" "Essence of Ice" "Essence of Battle" "Essence of Sorcery" "Essence of Ruin"
+    #Bronze
+        SetFontSize 28
+        SetTextColor 255 207 132
+        SetBorderColor 255 207 132
+        MinimapIcon 2 White Circle
+
+# ================================================================
+# Delirium
+# ================================================================
+
+# ==== Div+ (God Tier) ========================================
+Show
+    Class "Currency"
+    BaseType "Distilled Suffering" "Distilled Isolation"
+    #Legendary
+        SetFontSize 45
+        SetTextColor 255 0 0 255
+        SetBorderColor 255 0 0 255
+        SetBackgroundColor 255 255 255 255
+        PlayAlertSound 6 300
+        PlayEffect Red
+        MinimapIcon 0 Red Star
+
+# ==== MultiExalt+ (Great Tier) ========================================
+Show
+    Class "Currency"
+    BaseType "Distilled Despair" "Distilled Fear" 
+    #Diamond
+        SetFontSize 36
+        SetTextColor 84 204 200
+        SetBorderColor 84 204 200
+        SetBackgroundColor 255 255 255 255
+        MinimapIcon 2 Blue Cross
+        PlayEffect Cyan
+        PlayAlertSound 4 300
+
+# ==== Exalt+ (Good Tier) ========================================
+Show
+    Class "Currency"
+    BaseType "Distilled Greed" "Distilled Paranoia" "Distilled Envy" "Distilled Disgust"
+    #Gold
+            SetTextColor 255 207 132
+            SetBorderColor 255 207 132
+            PlayEffect Yellow
+            PlayAlertSound 3 300
+            MinimapIcon 2 Yellow Kite
+
+# ==== Regals+ (Decent Tier) ========================================
+Show
+    Class "Currency"
+    BaseType "Distilled Ire" "Distilled Guilt"
+    #Bronze
+        SetFontSize 28
+        SetTextColor 255 207 132
+        SetBorderColor 255 207 132
+        MinimapIcon 2 White Circle
+
+# ================================================================
+# Failsafes
+# ================================================================
+
+# ==== Currency ======================================
+# Catches any currency not accounted for and shows it as magenta.
+Show
+    Class "Currency"
+    #Unspecified
+        SetFontSize 22
+        SetTextColor 255 69 252
+        SetBorderColor 255 69 252
+        SetBackgroundColor 52 46 35 200
+        PlayAlertSound 4 300
+        PlayEffect Pink
+        MinimapIcon 2 Pink Circle
+        
+# ================================================================
