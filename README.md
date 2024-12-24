@@ -5,6 +5,8 @@ This repo contains my loot filters, written from the ground up with the game eco
 
 **--- Stay sane, Exile ---**
 
+## Please note that this filter is still a WIP. Check back for updates.
+
 ## 🎯 Features  
 - Reflects the Early Access economy as of **December 24, 2024**.  
 - Strict filtering of items to ensure only the most relevant loot is shown:  
@@ -50,6 +52,9 @@ The filter file can be opened and edited using a plain text editor.
 ---
 
 ## 🔄 Changelog  
+
+### Version 0.2 (24 December 2024):
+- Added initial support for Gold.
 
 ### Version 0.1 (24 December 2024):  
 - Initial release.  
