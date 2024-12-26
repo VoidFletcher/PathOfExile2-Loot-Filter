@@ -499,6 +499,7 @@ Show
 # ================================================================
 Show
     Class "Wands"
+    BaseType "Attuned Wand" "Siphoning Wand"
     Rarity == Rare
     ItemLevel >= 82
     #Rare Wand
@@ -508,6 +509,7 @@ Show
 
 Show
     Class "Wands"
+    BaseType "Attuned Wand" "Siphoning Wand"
     Rarity == Magic
     ItemLevel >= 82
     #Magic Wand
@@ -517,7 +519,7 @@ Show
             
 Show
     Class "Wands"
-    BaseType "Attuned Wand"
+    BaseType "Attuned Wand" "Siphoning Wand"
     Rarity == Normal
     ItemLevel >= 82
     #Normal Wands
