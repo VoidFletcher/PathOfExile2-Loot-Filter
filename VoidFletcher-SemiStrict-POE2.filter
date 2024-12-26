@@ -499,6 +499,22 @@ Show
         MinimapIcon 2 White Circle
 
 # ================================================================
+# Catalysts
+# ================================================================
+# Catalysts just aren't really worth picking up, but the dopamine hit 
+# is still nice. So we'll just make them look pretty. Feel free to 
+# adjust this to your liking.
+# ==== Pretty Meh but nice to have =====================================
+Show
+    ItemClass "Stackable Currency"
+    BaseType "Catalyst"
+    #Bronze
+            SetFontSize 28
+            SetTextColor 255 207 132
+            SetBorderColor 255 207 132
+            MinimapIcon 2 White Circle
+
+# ================================================================
 # Failsafes
 # ================================================================
 
