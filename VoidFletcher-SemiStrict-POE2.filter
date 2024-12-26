@@ -10,6 +10,8 @@
 # ================================================================
 # Change List:
 # ---------------------------------------------------------------
+# Version 0.4 (26 December 2024):
+# - Added support for splinters, fragments, breachstones, simulacrums.
 # Version 0.3 (26 December 2024):
 # - Added support for high-tier rings, amulets, belts.
 # - Added support for high-tier wands.
@@ -448,6 +450,55 @@ Show
         MinimapIcon 2 White Circle
 
 # ================================================================
+# Fragments, Splinters, Breachstones, Simulacrums
+# ================================================================
+# ==== Div+ (God Tier) ========================================
+Show
+    #Can't add "Faded Crisis Fragment"until POE supports it.
+    Class "Map Fragments"
+    BaseType "Simulacrum" "Breachstone" "An Audience with the King" "Fragment"
+    #Legendary
+        SetFontSize 45
+        SetTextColor 255 0 0 255
+        SetBorderColor 255 0 0 255
+        SetBackgroundColor 255 255 255 255
+        PlayAlertSound 6 300
+        PlayEffect Red
+        MinimapIcon 0 Red Star
+        
+# ==== MultiExalt+ (Great Tier) ========================================
+Show
+    #Can't add "Weathered Crisis Fragment" "Ancient Crisis Fragment" until POE supports it.
+    BaseType "Deadly Fate"
+    #Diamond
+        SetFontSize 36
+        SetTextColor 84 204 200
+        SetBorderColor 84 204 200
+        SetBackgroundColor 255 255 255 255
+        MinimapIcon 2 Blue Cross
+        PlayEffect Cyan
+        PlayAlertSound 4 300        
+        
+# ==== Exalt+ (Good Tier) ========================================
+Show
+    BaseType "Cowardly Fate" "Victorious Fate"
+    #Gold
+            SetTextColor 255 207 132
+            SetBorderColor 255 207 132
+            PlayEffect Yellow
+            PlayAlertSound 3 300
+            MinimapIcon 2 Yellow Kite
+
+# ==== Regals+ (Decent Tier) ========================================
+Show
+    BaseType "Simulacrum Splinter" "Breach Splinter"
+    #Bronze
+        SetFontSize 28
+        SetTextColor 255 207 132
+        SetBorderColor 255 207 132
+        MinimapIcon 2 White Circle
+
+# ================================================================
 # Failsafes
 # ================================================================
 
@@ -538,7 +589,7 @@ Hide
     Rarity < Rare
     ItemLevel < 82
     Quality == 0
-        
+
 Hide
     Class "Armour" "Boots" "Helmet" "Gloves" "Body Armour" "Belt" "Amulet" "Ring"
     BaseType "Advanced "
@@ -555,13 +606,13 @@ Hide
 # All armor that is magic or normal and lower than ilvl 82. ilvl 82 and above are required for some of the high tier craft
 # rolls. So we want to ignore lower tier bases. Also explicitly hides low desired bases.
 Hide
-    Class "One Hand Maces" "Two Hand Maces" "Shield" "Quiver" "Bow" "Claw" "Dagger" "One Hand Axe" "Two Hand Axe" "One Hand Sword" "Two Hand Sword" "Wands" "Sceptre" "Staff" "Quivers"
+    Class "One Hand Maces" "Two Hand Maces" "Shield" "Quiver" "Bow" "Claw" "Dagger" "One Hand Axe" "Two Hand Axe" "One Hand Sword" "Two Hand Sword" "Wands" "Sceptre" "Staff" "Quivers" "Focus"
     Rarity < Rare
     ItemLevel < 82
     Quality == 0
         
 Hide
-    Class "One Hand Maces" "Two Hand Maces" "Shield" "Quiver" "Bow" "Claw" "Dagger" "One Hand Axe" "Two Hand Axe" "One Hand Sword" "Two Hand Sword" "Wands" "Sceptre" "Staff" "Quivers"
+    Class "One Hand Maces" "Two Hand Maces" "Shield" "Quiver" "Bow" "Claw" "Dagger" "One Hand Axe" "Two Hand Axe" "One Hand Sword" "Two Hand Sword" "Wands" "Sceptre" "Staff" "Quivers" "Focus"
     BaseType "Advanced "
     Rarity < Rare
     Quality == 0
