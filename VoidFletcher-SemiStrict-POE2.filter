@@ -506,7 +506,7 @@ Show
 # adjust this to your liking.
 # ==== Pretty Meh but nice to have =====================================
 Show
-    ItemClass "Stackable Currency"
+    Class "Stackable Currency"
     BaseType "Catalyst"
     #Bronze
             SetFontSize 28
