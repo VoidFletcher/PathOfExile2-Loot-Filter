@@ -10,6 +10,8 @@
 # ================================================================
 # Change List:
 # ---------------------------------------------------------------
+# Version 0.5 (27 December 2024):
+# - Added support for bronze, silver and gold keys.
 # Version 0.4 (26 December 2024):
 # - Added support for splinters, fragments, breachstones, simulacrums.
 # Version 0.3 (26 December 2024):
@@ -172,6 +174,36 @@ Show
         MinimapIcon 1 Purple Square
         SetFontSize 26
     
+
+# ================================================================
+# Trial
+# ================================================================
+Show
+    Class "Currency"
+    BaseType "Gold Key"
+    #Gold key
+                SetFontSize 28
+                SetTextColor 235 175 9
+                SetBorderColor 255 207 132
+                PlayEffect Yellow
+                
+Show
+    Class "Currency"
+    BaseType "Silver Key"
+    #Silver key
+                SetFontSize 28
+                SetTextColor 255 255 255
+                SetBorderColor 255 207 132
+                PlayEffect Grey
+
+Show
+    Class "Currency"
+    BaseType "Bronze Key"
+    #Bronze key
+                SetFontSize 28
+                SetTextColor 173 109 35
+                SetBorderColor 255 207 132
+                PlayEffect Brown
 
 # ================================================================
 # Uncut Gems
@@ -514,6 +546,7 @@ Show
             SetBorderColor 255 207 132
             MinimapIcon 2 White Circle
 
+
 # ================================================================
 # Failsafes
 # ================================================================
@@ -636,7 +669,7 @@ Hide
 # The following are currently low-desired weapon bases worth less than 1 exalt per inventory slot they take.
 Hide
     Class "One Hand Maces" "Two Hand Maces" "Shield" "Quiver" "Bow" "Claw" "Dagger" "One Hand Axe" "Two Hand Axe" "One Hand Sword" "Two Hand Sword" "Wands" "Sceptre" "Staff" "Focus"
-    BaseType "Expert Antler Focus" "Expert Crystal Focus" "Expert Plumed Focus" "Expert Smithing Hammer" "Expert Brigand Mace" "Expert Construct Hammer" "Expert Shortbow" "Expert Warden Bow" "Expert Composite Bow" "Expert Cultist Bow" "Expert Zealot Bow" "Expert Tense Crossbow" "Expert Sturdy Crossbow" "Expert Bombard Crossbow" "Expert Forlorn Crossbow" "Expert Long Quarterstaff" "Expert Crackling Quarterstaff" "Expert Crescent Quarterstaff" "Expert Barrier Quarterstaff" "Expert Oak Greathammer" "Expert Forge Maul" "Expert Cultist Greathammer" "Expert Temple Maul" "Expert Leaden Greathammer" "Expert Crumbling Maul" "Volant Quiver" "Visceral Quiver" "Bone Wand" "Withered Wand" "Volatile Wand"
+    BaseType "Expert Antler Focus" "Expert Crystal Focus" "Expert Plumed Focus" "Expert Smithing Hammer" "Expert Brigand Mace" "Expert Construct Hammer" "Expert Shortbow" "Expert Warden Bow" "Expert Composite Bow" "Expert Cultist Bow" "Expert Zealot Bow" "Expert Tense Crossbow" "Expert Sturdy Crossbow" "Expert Bombard Crossbow" "Expert Forlorn Crossbow" "Expert Long Quarterstaff" "Expert Crackling Quarterstaff" "Expert Crescent Quarterstaff" "Expert Barrier Quarterstaff" "Expert Oak Greathammer" "Expert Forge Maul" "Expert Cultist Greathammer" "Expert Temple Maul" "Expert Leaden Greathammer" "Expert Crumbling Maul" "Volant Quiver" "Visceral Quiver" "Bone Wand" "Withered Wand" "Volatile Wand" "Expert Warpick" "Voltaic Staff" "Gelid Staff" "Rattling Sceptre"
     Quality == 0
     
 # ==== Jewelery ======================================
