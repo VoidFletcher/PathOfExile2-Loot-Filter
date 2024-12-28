@@ -10,6 +10,9 @@
 # ================================================================
 # Change List:
 # ---------------------------------------------------------------
+# Version 0.6 (28 December 2024):
+# - Added support for order, sun, black artifacts.
+# - Fixed a bug where low ilvl unique rings were being hidden.
 # Version 0.5 (27 December 2024):
 # - Added support for bronze, silver and gold keys.
 # Version 0.4 (26 December 2024):
@@ -546,6 +549,21 @@ Show
             SetBorderColor 255 207 132
             MinimapIcon 2 White Circle
 
+# ================================================================
+# Artifacts
+# ================================================================
+# Catalysts just aren't really worth picking up, but the dopamine hit 
+# is still nice. So we'll just make them look pretty. Feel free to 
+# adjust this to your liking.
+# ==== Pretty Meh but nice to have =====================================
+Show
+    Class "Stackable Currency"
+    BaseType "Order Artifact" "Sun Artifact" "Black Scythe Artifact" "Broken Circle Artifact"
+    #Bronze
+            SetFontSize 28
+            SetTextColor 255 207 132
+            SetBorderColor 255 207 132
+            MinimapIcon 2 White Circle
 
 # ================================================================
 # Failsafes
@@ -649,6 +667,7 @@ Hide
 Hide
     Class "Armour" "Boots" "Helmet" "Gloves" "Body Armour" "Belt" "Amulet" "Ring"
     BaseType "Expert Pathfinder Coat" "Expert Studded Vest" "Expert Serpentscale Coat" "Expert Wayfarer Jacket" "Expert Scalper's Jacket" "Expert Hexer's Robe" "Expert Keth Raiment" "Expert Altar Robe" "Expert Iron Cuirass" "Expert Steel Plate" "Expert Vaal Cuirass" "Expert Rogue Armour" "Expert Cloaked Mail" "Expert Scale Mail" "Expert Shaman Mantle" "Expert Sacrificial Mantle" "Expert Stone Greaves" "Expert Mail Sabatons" "Expert Pelt Leggings" "Expert Sectioned Bracers" "Expert Spined Bracers" "Expert Spiral Wraps" "Expert Intricate Gloves" "Expert Moulded Mitts" "Expert Doubled Gauntlets" "Expert Hunter Hood" "Expert Tribal Mask" "Expert Wicker Tiara" "Expert Chain Tiara" "Expert Feathered Tiara" "Expert Elite Greathelm" "Expert Shielded Helm" "Expert Heavy Crown" ""
+    Rarity < Rare
     Quality == 0
     
 # ==== Weapons ======================================
@@ -670,6 +689,7 @@ Hide
 Hide
     Class "One Hand Maces" "Two Hand Maces" "Shield" "Quiver" "Bow" "Claw" "Dagger" "One Hand Axe" "Two Hand Axe" "One Hand Sword" "Two Hand Sword" "Wands" "Sceptre" "Staff" "Focus"
     BaseType "Expert Antler Focus" "Expert Crystal Focus" "Expert Plumed Focus" "Expert Smithing Hammer" "Expert Brigand Mace" "Expert Construct Hammer" "Expert Shortbow" "Expert Warden Bow" "Expert Composite Bow" "Expert Cultist Bow" "Expert Zealot Bow" "Expert Tense Crossbow" "Expert Sturdy Crossbow" "Expert Bombard Crossbow" "Expert Forlorn Crossbow" "Expert Long Quarterstaff" "Expert Crackling Quarterstaff" "Expert Crescent Quarterstaff" "Expert Barrier Quarterstaff" "Expert Oak Greathammer" "Expert Forge Maul" "Expert Cultist Greathammer" "Expert Temple Maul" "Expert Leaden Greathammer" "Expert Crumbling Maul" "Volant Quiver" "Visceral Quiver" "Bone Wand" "Withered Wand" "Volatile Wand" "Expert Warpick" "Voltaic Staff" "Gelid Staff" "Rattling Sceptre"
+    Rarity < Rare
     Quality == 0
     
 # ==== Jewelery ======================================
