@@ -10,6 +10,8 @@
 # ================================================================
 # Change List:
 # ---------------------------------------------------------------
+# Version 0.7 (28 December 2024):
+# - Added support logbooks.
 # Version 0.6 (28 December 2024):
 # - Added support for order, sun, black artifacts.
 # - Fixed a bug where low ilvl unique rings were being hidden.
@@ -575,6 +577,21 @@ Show
             SetTextColor 255 207 132
             SetBorderColor 255 207 132
             MinimapIcon 2 White Circle
+            
+# ================================================================
+# Logbooks
+# ================================================================
+Show
+    Class "Expedition Logbooks"
+    BaseType "Expedition Logbook"
+    #Logbook
+            SetTextColor 255 255 255
+            SetBorderColor 76 14 128
+            PlayAlertSound 4 300
+            PlayEffect Purple
+            MinimapIcon 1 Purple Square
+            SetFontSize 26
+
 
 # ================================================================
 # Failsafes
