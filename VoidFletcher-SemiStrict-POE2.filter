@@ -225,6 +225,17 @@ Show
         PlayAlertSound 6 300
         PlayEffect Red
         MinimapIcon 0 Red Star
+        
+
+Show
+    BaseType "Uncut Spirit Gem"
+    ItemLevel == 19
+    #Gold
+        SetTextColor 255 207 132
+        SetBorderColor 255 207 132
+        PlayEffect Yellow
+        PlayAlertSound 3 300
+        MinimapIcon 2 Yellow Kite
   
 Show
     BaseType "Uncut Spirit Gem"
