@@ -10,6 +10,8 @@
 # ================================================================
 # Change List:
 # ---------------------------------------------------------------
+# Version 0.7.1 (28 December 2024):
+# - Fixed a bug where heavy belts were being hidden.
 # Version 0.7 (28 December 2024):
 # - Added support logbooks.
 # Version 0.6 (28 December 2024):
@@ -676,6 +678,11 @@ Show
 # ================================================================
 # Hide Low-Tier Bases
 # ================================================================
+# ==== Exclusions ======================================
+Show
+    Class "Belts"
+    BaseType "HeavyBelt"
+
 # ==== Armor ======================================
 # All armor that is magic or normal and lower than ilvl 82. ilvl 82 and above are required for some of the high tier craft
 # rolls. So we want to ignore lower tier bases. Also explicitly hides low desired bases.
