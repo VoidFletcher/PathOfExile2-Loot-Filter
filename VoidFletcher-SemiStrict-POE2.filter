@@ -249,7 +249,7 @@ Show
   
 Show
     BaseType "Uncut Spirit Gem"
-    ItemLevel <= 19
+    ItemLevel <= 18
     #Bronze
         SetFontSize 28
         SetTextColor 255 207 132
