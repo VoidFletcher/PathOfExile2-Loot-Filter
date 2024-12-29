@@ -516,6 +516,18 @@ Show
         PlayAlertSound 6 300
         PlayEffect Red
         MinimapIcon 0 Red Star
+        
+Show
+    Class "Map Fragments"
+    BaseType "An Audience with the King" "Breachstone" "Simulacrum"
+    #Legendary
+            SetFontSize 45
+            SetTextColor 255 0 0 255
+            SetBorderColor 255 0 0 255
+            SetBackgroundColor 255 255 255 255
+            PlayAlertSound 6 300
+            PlayEffect Red
+            MinimapIcon 0 Red Star
 
 # ==== MultiExalt+ (Great Tier) ========================================
 Show
