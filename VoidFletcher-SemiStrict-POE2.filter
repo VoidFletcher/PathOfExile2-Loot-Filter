@@ -234,12 +234,14 @@ Show
 Show
     BaseType "Uncut Spirit Gem"
     ItemLevel == 19
-    #Gold
-        SetTextColor 255 207 132
-        SetBorderColor 255 207 132
-        PlayEffect Yellow
-        PlayAlertSound 3 300
-        MinimapIcon 2 Yellow Kite
+    #Diamond
+            SetFontSize 36
+            SetTextColor 84 204 200
+            SetBorderColor 84 204 200
+            SetBackgroundColor 255 255 255 255
+            MinimapIcon 2 Blue Cross
+            PlayEffect Cyan
+            PlayAlertSound 4 300
   
 Show
     BaseType "Uncut Spirit Gem"
@@ -504,9 +506,8 @@ Show
 # ================================================================
 # ==== Div+ (God Tier) ========================================
 Show
-    #Can't add "Faded Crisis Fragment"until POE supports it.
-    Class "Map Fragments"
-    BaseType "Simulacrum" "Breachstone" "An Audience with the King" "Fragment"
+    #Can't add and differentiate between crisis fragments until POE supports it. "Faded Crisis Fragment" should go in this categ
+    Class "Pinnacle Keys"
     #Legendary
         SetFontSize 45
         SetTextColor 255 0 0 255
@@ -515,10 +516,10 @@ Show
         PlayAlertSound 6 300
         PlayEffect Red
         MinimapIcon 0 Red Star
-        
+
 # ==== MultiExalt+ (Great Tier) ========================================
 Show
-    #Can't add "Weathered Crisis Fragment" "Ancient Crisis Fragment" until POE supports it.
+    #Can't add "Weathered Crisis Fragment" "Ancient Crisis Fragment" until POE supports it. ory.
     BaseType "Deadly Fate"
     #Diamond
         SetFontSize 36
@@ -681,6 +682,7 @@ Show
 # ==== Exclusions ======================================
 Show
     Class "Belts"
+    Rarity == Normal
     BaseType "Heavy Belt"
 
 # ==== Armor ======================================
