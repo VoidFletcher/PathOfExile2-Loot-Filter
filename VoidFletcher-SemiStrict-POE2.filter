@@ -10,6 +10,11 @@
 # ================================================================
 # Change List:
 # ---------------------------------------------------------------
+# Version 0.8 (30 December 2024):
+# - Added custom update tool.
+# - Fixed An Audience with the King fragment highlighting.
+# - Economy Update for level 19 uncut spirit gems.
+# - Fixed highlighting on citadel fragments.
 # Version 0.7.1 (28 December 2024):
 # - Fixed a bug where heavy belts were being hidden.
 # Version 0.7 (28 December 2024):
