@@ -6,6 +6,9 @@ This repo contains my loot filters, written from the ground up with the game eco
 **--- Stay sane, Exile ---**
 
 ## Please note that this filter is still a WIP. 
+
+![alt text](https://cdn.discordapp.com/attachments/907760360633823273/1323105018974568550/image.png?ex=67734d12&is=6771fb92&hm=ce1deb087b836089920d8e6b6e8e03cc637de8acde9af8b43a3a975966fbd0ac&)
+
 ## Remember to update frequently either via the update tool or manually.
 
 ## 🎯 Features  
