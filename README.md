@@ -5,7 +5,8 @@ This repo contains my loot filters, written from the ground up with the game eco
 
 **--- Stay sane, Exile ---**
 
-## Please note that this filter is still a WIP. Please remember to update frequently either via the update tool or manually.
+## Please note that this filter is still a WIP. 
+## Remember to update frequently either via the update tool or manually.
 
 ## 🎯 Features  
 - Reflects the Early Access economy as of **December 30, 2024**.  
