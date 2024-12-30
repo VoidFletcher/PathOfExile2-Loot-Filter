@@ -1,4 +1,4 @@
-# VoidFletcher's Path of Exile 2 Loot Filters
+# VoidFletcher's Path of Exile 2 Loot Filter
 This repo contains my loot filters, written from the ground up with the game economy as a core focus of the filter.
 
 **SemiStrict:** Designed for T16+ Mapping. A semi-strict and finely-tuned loot filter designed for **Path of Exile 2** Early Access economy. This filter prioritizes essential and high-value items while removing clutter, enabling a more streamlined and efficient gameplay experience.
