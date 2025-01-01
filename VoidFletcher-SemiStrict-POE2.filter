@@ -10,6 +10,8 @@
 # ================================================================
 # Change List:
 # ---------------------------------------------------------------
+# Version 0.9 (1 January 2025):
+# - Charms are now hidden.
 # Version 0.8 (30 December 2024):
 # - Added custom update tool.
 # - Fixed An Audience with the King fragment highlighting.
@@ -759,4 +761,11 @@ Hide
 Hide
     Class "Flask"
         Rarity < Unique
+        
+# ==== Charms ======================================
+# Hide all charms. (With a failsafe in-case rare or unique charms are added.)
+Hide
+    Class "Charms"
+        Rarity < Rare
+
 # ================================================================
