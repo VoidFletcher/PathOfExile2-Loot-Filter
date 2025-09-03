@@ -1,7 +1,7 @@
 # ================================================================
 #                      PATH OF EXILE 2 LOOT FILTER
 # ================================================================
-# Version:       0.1
+# Version:       0.3
 # Author:        VoidFletcher
 # Description:   A custom loot filter tailored for the Path of Exile 2
 #                Early Access Economy. This semi-strict filter ensures
@@ -10,31 +10,37 @@
 # ================================================================
 # Change List:
 # ---------------------------------------------------------------
-# Version 0.9 (1 January 2025):
+# Version 0.3.1 (3 September 2025)
+# - Fixed filter to work with Abyss league.
+# - Updated versioning to mirror POE version scheme.
+# - Added perfect and greater orbs.
+# - Updated distilled emotions to liquid emotions.
+# - Still requires market value pass.
+# Version 0.1.9 (1 January 2025):
 # - Charms are now hidden.
-# Version 0.8 (30 December 2024):
+# Version 0.1.8 (30 December 2024):
 # - Added custom update tool.
 # - Fixed An Audience with the King fragment highlighting.
 # - Economy Update for level 19 uncut spirit gems.
 # - Fixed highlighting on citadel fragments.
-# Version 0.7.1 (28 December 2024):
+# Version 0.1.7.1 (28 December 2024):
 # - Fixed a bug where heavy belts were being hidden.
-# Version 0.7 (28 December 2024):
+# Version 0.1.7 (28 December 2024):
 # - Added support logbooks.
-# Version 0.6 (28 December 2024):
+# Version 0.1.6 (28 December 2024):
 # - Added support for order, sun, black artifacts.
 # - Fixed a bug where low ilvl unique rings were being hidden.
-# Version 0.5 (27 December 2024):
+# Version 0.1.5 (27 December 2024):
 # - Added support for bronze, silver and gold keys.
-# Version 0.4 (26 December 2024):
+# Version 0.1.4 (26 December 2024):
 # - Added support for splinters, fragments, breachstones, simulacrums.
-# Version 0.3 (26 December 2024):
+# Version 0.1.3 (26 December 2024):
 # - Added support for high-tier rings, amulets, belts.
 # - Added support for high-tier wands.
 # - Added support for hiding low-tier/value armor, weapons, jewelery, flasks.
-# Version 0.2 (24 December 2024):
+# Version 0.1.2 (24 December 2024):
 # - Added initial support for Gold.
-# Version 0.1 (24 December 2024):
+# Version 0.1.1 (24 December 2024):
 # - Added initial implementation with full support for:
 #   - Currency
 #   - Waystones
@@ -311,7 +317,7 @@ Show
 # ==== Div+ (God Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Mirror" "Divine" "Perfect Jeweller's Orb"
+    BaseType "Mirror" "Divine" "Perfect Jeweller's Orb" "Perfect Exalted Orb"
     #Legendary
         SetFontSize 45
         SetTextColor 255 0 0 255
@@ -324,7 +330,7 @@ Show
 # ==== MultiExalt+ (Great Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Greater Jeweller's Orb"
+    BaseType "Greater Jeweller's Orb" "Greater Exalted Orb" "Perfect Regal Orb"
     #Diamond
             SetFontSize 36
             SetTextColor 84 204 200
@@ -337,7 +343,7 @@ Show
 # ==== Exalt+ (Good Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Exalted Orb" "Annulment" "Chaos" "Orb of Chance" "Gemcutter" "Vaal"
+    BaseType "Exalted Orb" "Annulment" "Chaos" "Orb of Chance" "Gemcutter" "Vaal" "Greater Regal Orb"
     #Gold
             SetTextColor 255 207 132
             SetBorderColor 255 207 132
@@ -348,7 +354,7 @@ Show
 # ==== Regals+ (Decent Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Regal" "Alchemy" "Armourer's Scrap" "Glassblower's Bauble"
+    BaseType "Regal" "Alchemy" "Armourer's Scrap" "Glassblower's Bauble" "Perfect Orb of Transmutation" "Perfect Orb of Augmentation"
     #Bronze
         SetFontSize 28
         SetTextColor 255 207 132
@@ -359,7 +365,7 @@ Show
 # Creator Note: Why tf are you picking this up?
 Show
     Class "Currency"
-    BaseType "Scroll of Wisdom" "Transmutation" "Augmentation" "Alteration" "Blacksmith's Whetstone" "Arcanist's Etcher" "Artificer" "Chance Shard" "Lesser Jeweller's Orb"
+    BaseType "Scroll of Wisdom" "Transmutation" "Augmentation" "Greater Orb of Transmutation" "Greater Orb of Augmentation" "Blacksmith's Whetstone" "Arcanist's Etcher" "Artificer" "Chance Shard" "Lesser Jeweller's Orb"
     #Wood
         SetFontSize 22
         SetTextColor 163 152 124
@@ -426,7 +432,7 @@ Show
 # ==== MultiExalt+ (Great Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Greater Essence of the Mind" "Greater Essence of Enhancement" "Greater Essence of the Infinite" "Greater Essence of Electricity" "Greater Essence of Torment" "Greater Essence of Sorcery" "Greater Essence of Ruin"
+    BaseType "Greater Essence of the Mind" "Greater Essence of Enhancement" "Greater Essence of the Infinite" "Greater Essence of Electricity" "Greater Essence of Sorcery" "Greater Essence of Ruin"
     #Diamond
         SetFontSize 36
         SetTextColor 84 204 200
@@ -439,7 +445,7 @@ Show
 # ==== Exalt+ (Good Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Greater Essence of the Body" "Greater Essence of Flames" "Greater Essence of Battle" "Greater Essence of Ice" "Essence of Electricity" "Essence of Torment" "Essence of Haste"
+    BaseType "Greater Essence of the Body" "Greater Essence of Flames" "Greater Essence of Battle" "Greater Essence of Ice" "Essence of Electricity" "Essence of Haste"
     #Gold
             SetTextColor 255 207 132
             SetBorderColor 255 207 132
@@ -464,7 +470,7 @@ Show
 # ==== Div+ (God Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Distilled Suffering" "Distilled Isolation"
+    BaseType "Concentrated Liquid Suffering" "Concentrated Liquid Isolation"
     #Legendary
         SetFontSize 45
         SetTextColor 255 0 0 255
@@ -477,7 +483,7 @@ Show
 # ==== MultiExalt+ (Great Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Distilled Despair" "Distilled Fear" 
+    BaseType "Liquid Despair" "Liquid Fear" 
     #Diamond
         SetFontSize 36
         SetTextColor 84 204 200
@@ -490,7 +496,7 @@ Show
 # ==== Exalt+ (Good Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Distilled Greed" "Distilled Paranoia" "Distilled Envy" "Distilled Disgust"
+    BaseType "Diluted Liquid Greed" "Liquid Paranoia" "Liquid Envy" "Liquid Disgust"
     #Gold
             SetTextColor 255 207 132
             SetBorderColor 255 207 132
@@ -501,7 +507,7 @@ Show
 # ==== Regals+ (Decent Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Distilled Ire" "Distilled Guilt"
+    BaseType "Diluted Liquid Ire" "Diluted Liquid Guilt"
     #Bronze
         SetFontSize 28
         SetTextColor 255 207 132
@@ -713,18 +719,20 @@ Hide
     ItemLevel < 82
     Quality == 0
 
-Hide
-    Class "Armour" "Boots" "Helmet" "Gloves" "Body Armour" "Belt" "Amulet" "Ring"
-    BaseType "Advanced "
-    Rarity < Rare
-    Quality == 0
-    
+# TODO: Removed placeholder, test then remove.
+#Hide
+#    Class "Armour" "Boots" "Helmet" "Gloves" "Body Armour" "Belt" "Amulet" "Ring"
+#    BaseType "Advanced "
+#    Rarity < Rare
+#    Quality == 0
+
+# TODO: Removed placeholder, test then remove.    
 # The following are currently low-desired armor bases worth less than 1 exalt per inventory slot they take.
-Hide
-    Class "Armour" "Boots" "Helmet" "Gloves" "Body Armour" "Belt" "Amulet" "Ring"
-    BaseType "Expert Pathfinder Coat" "Expert Studded Vest" "Expert Serpentscale Coat" "Expert Wayfarer Jacket" "Expert Scalper's Jacket" "Expert Hexer's Robe" "Expert Keth Raiment" "Expert Altar Robe" "Expert Iron Cuirass" "Expert Steel Plate" "Expert Vaal Cuirass" "Expert Rogue Armour" "Expert Cloaked Mail" "Expert Scale Mail" "Expert Shaman Mantle" "Expert Sacrificial Mantle" "Expert Stone Greaves" "Expert Mail Sabatons" "Expert Pelt Leggings" "Expert Sectioned Bracers" "Expert Spined Bracers" "Expert Spiral Wraps" "Expert Intricate Gloves" "Expert Moulded Mitts" "Expert Doubled Gauntlets" "Expert Hunter Hood" "Expert Tribal Mask" "Expert Wicker Tiara" "Expert Chain Tiara" "Expert Feathered Tiara" "Expert Elite Greathelm" "Expert Shielded Helm" "Expert Heavy Crown" ""
-    Rarity < Rare
-    Quality == 0
+#Hide
+#    Class "Armour" "Boots" "Helmet" "Gloves" "Body Armour" "Belt" "Amulet" "Ring"
+#    BaseType "Expert Pathfinder Coat" "Expert Studded Vest" "Expert Serpentscale Coat" "Expert Wayfarer Jacket" "Expert Scalper's Jacket" "Expert Hexer's Robe" "Expert Keth Raiment" "Expert Altar Robe" "Expert Iron Cuirass" "Expert Steel Plate" "Expert Vaal Cuirass" "Expert Rogue Armour" "Expert Cloaked Mail" "Expert Scale Mail" "Expert Shaman Mantle" "Expert Sacrificial Mantle" "Expert Stone Greaves" "Expert Mail Sabatons" "Expert Pelt Leggings" "Expert Sectioned Bracers" "Expert Spined Bracers" "Expert Spiral Wraps" "Expert Intricate Gloves" "Expert Moulded Mitts" "Expert Doubled Gauntlets" "Expert Hunter Hood" "Expert Tribal Mask" "Expert Wicker Tiara" "Expert Chain Tiara" "Expert Feathered Tiara" "Expert Elite Greathelm" "Expert Shielded Helm" "Expert Heavy Crown" ""
+#    Rarity < Rare
+#    Quality == 0
     
 # ==== Weapons ======================================
 # All armor that is magic or normal and lower than ilvl 82. ilvl 82 and above are required for some of the high tier craft
@@ -734,19 +742,21 @@ Hide
     Rarity < Rare
     ItemLevel < 82
     Quality == 0
-        
-Hide
-    Class "One Hand Maces" "Two Hand Maces" "Shield" "Quiver" "Bow" "Claw" "Dagger" "One Hand Axe" "Two Hand Axe" "One Hand Sword" "Two Hand Sword" "Wands" "Sceptre" "Staff" "Quivers" "Focus"
-    BaseType "Advanced "
-    Rarity < Rare
-    Quality == 0
-    
+
+# TODO: Removed placeholder, test then remove.        
+#Hide
+#    Class "One Hand Maces" "Two Hand Maces" "Shield" "Quiver" "Bow" "Claw" "Dagger" "One Hand Axe" "Two Hand Axe" "One Hand Sword" "Two Hand Sword" "Wands" "Sceptre" "Staff" "Quivers" "Focus"
+#    BaseType "Advanced "
+#    Rarity < Rare
+#    Quality == 0
+
+# TODO: Removed placeholder, test then remove.        
 # The following are currently low-desired weapon bases worth less than 1 exalt per inventory slot they take.
-Hide
-    Class "One Hand Maces" "Two Hand Maces" "Shield" "Quiver" "Bow" "Claw" "Dagger" "One Hand Axe" "Two Hand Axe" "One Hand Sword" "Two Hand Sword" "Wands" "Sceptre" "Staff" "Focus"
-    BaseType "Expert Antler Focus" "Expert Crystal Focus" "Expert Plumed Focus" "Expert Smithing Hammer" "Expert Brigand Mace" "Expert Construct Hammer" "Expert Shortbow" "Expert Warden Bow" "Expert Composite Bow" "Expert Cultist Bow" "Expert Zealot Bow" "Expert Tense Crossbow" "Expert Sturdy Crossbow" "Expert Bombard Crossbow" "Expert Forlorn Crossbow" "Expert Long Quarterstaff" "Expert Crackling Quarterstaff" "Expert Crescent Quarterstaff" "Expert Barrier Quarterstaff" "Expert Oak Greathammer" "Expert Forge Maul" "Expert Cultist Greathammer" "Expert Temple Maul" "Expert Leaden Greathammer" "Expert Crumbling Maul" "Volant Quiver" "Visceral Quiver" "Bone Wand" "Withered Wand" "Volatile Wand" "Expert Warpick" "Voltaic Staff" "Gelid Staff" "Rattling Sceptre" "Expert Rampart Tower Shield" "Expert Feathered Targe" "Expert Slim Mace" "Expert Plated Mace"
-    Rarity < Rare
-    Quality == 0
+#Hide
+#    Class "One Hand Maces" "Two Hand Maces" "Shield" "Quiver" "Bow" "Claw" "Dagger" "One Hand Axe" "Two Hand Axe" "One Hand Sword" "Two Hand Sword" "Wands" "Sceptre" "Staff" "Focus"
+#    BaseType "Expert Antler Focus" "Expert Crystal Focus" "Expert Plumed Focus" "Expert Smithing Hammer" "Expert Brigand Mace" "Expert Construct Hammer" "Expert Shortbow" "Expert Warden Bow" "Expert Composite Bow" "Expert Cultist Bow" "Expert Zealot Bow" "Expert Tense Crossbow" "Expert Sturdy Crossbow" "Expert Bombard Crossbow" "Expert Forlorn Crossbow" "Expert Long Quarterstaff" "Expert Crackling Quarterstaff" "Expert Crescent Quarterstaff" "Expert Barrier Quarterstaff" "Expert Oak Greathammer" "Expert Forge Maul" "Expert Cultist Greathammer" "Expert Temple Maul" "Expert Leaden Greathammer" "Expert Crumbling Maul" "Volant Quiver" "Visceral Quiver" "Bone Wand" "Withered Wand" "Volatile Wand" "Expert Warpick" "Voltaic Staff" "Gelid Staff" "Rattling Sceptre" "Expert Rampart Tower Shield" "Expert Feathered Targe" "Expert Slim Mace" "Expert Plated Mace"
+#    Rarity < Rare
+#    Quality == 0
     
 # ==== Jewelery ======================================
 # Hide all low ilvl normal and magic jewelery. This includes rings, amulets and belts.
