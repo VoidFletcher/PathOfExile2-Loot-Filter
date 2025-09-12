@@ -709,6 +709,23 @@ Show
 Show
     Class "Belts"
     Rarity == Normal
+    #Gold
+                SetBorderColor 255 207 132
+                PlayEffect Yellow
+                PlayAlertSound 3 300
+                MinimapIcon 2 Yellow Kite
+                
+Show
+    BaseType "Heavy Belt"
+    Rarity == Normal
+    #Diamond
+        SetFontSize 36
+        SetBorderColor 84 204 200
+        SetBackgroundColor 255 255 255 255
+        MinimapIcon 2 Blue Cross
+        PlayEffect Cyan
+        PlayAlertSound 4 300      
+    
 
 # ==== Armor ======================================
 # All armor that is magic or normal and lower than ilvl 82. ilvl 82 and above are required for some of the high tier craft
