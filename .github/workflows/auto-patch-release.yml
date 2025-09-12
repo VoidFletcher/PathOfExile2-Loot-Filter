@@ -1,0 +1,89 @@
+name: Auto Patch Release
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write   # needed to create releases and tags
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine next patch version
+        id: semver
+        env:
+          GH_REPO: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          # Query the latest (non-draft, non-prerelease) release
+          HTTP_CODE=$(mktemp)
+          RESP=$(curl -sS -w "%{http_code}" \
+            -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${GH_REPO}/releases/latest" \
+            -o >(tee response.json) )
+          
+          # If there's no release yet, start from 0.0.0
+          if [ "${RESP}" = "404" ]; then
+            LATEST_TAG="0.0.0"
+            PREFIX=""
+          else
+            TAG=$(jq -r '.tag_name' response.json)
+            if [ "${TAG}" = "null" ] || [ -z "${TAG}" ]; then
+              LATEST_TAG="0.0.0"
+              PREFIX=""
+            else
+              LATEST_TAG="${TAG}"
+            fi
+            # Preserve a leading 'v' if present
+            if [[ "${LATEST_TAG}" =~ ^v ]]; then
+              PREFIX="v"
+              BASE="${LATEST_TAG#v}"
+            else
+              PREFIX=""
+              BASE="${LATEST_TAG}"
+            fi
+            LATEST_TAG="${BASE}"
+          fi
+
+          # Validate and bump patch
+          if [[ ! "${LATEST_TAG}" =~ ^([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
+            echo "Latest tag '${LATEST_TAG}' is not x.y.z; aborting." >&2
+            exit 1
+          fi
+
+          MAJOR="${BASH_REMATCH[1]}"
+          MINOR="${BASH_REMATCH[2]}"
+          PATCH="${BASH_REMATCH[3]}"
+          NEXT_PATCH=$((PATCH + 1))
+          NEXT="${MAJOR}.${MINOR}.${NEXT_PATCH}"
+          NEXT_TAG="${PREFIX}${NEXT}"
+
+          echo "latest=${PREFIX}${MAJOR}.${MINOR}.${PATCH}" >> "$GITHUB_OUTPUT"
+          echo "next=${NEXT}" >> "$GITHUB_OUTPUT"
+          echo "next_tag=${NEXT_TAG}" >> "$GITHUB_OUTPUT"
+
+          echo "Will create release: ${NEXT_TAG}"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.semver.outputs.next_tag }}
+          name: Release ${{ steps.semver.outputs.next }}
+          draft: false
+          prerelease: false
+          fail_on_unmatched_files: true
+          files: |
+            VoidFletcher-SemiStrict-POE2.filter
+            Update-VoidFletcher-Loot-Filters.bat
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
