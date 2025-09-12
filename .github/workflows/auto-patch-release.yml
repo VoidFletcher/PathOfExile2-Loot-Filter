@@ -3,9 +3,10 @@ name: Auto Patch Release
 on:
   push:
     branches: [ master ]
+  workflow_dispatch:
 
 permissions:
-  contents: write   # needed to create releases and tags
+  contents: write
 
 jobs:
   release:
@@ -16,7 +17,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Determine next patch version
+      - name: Determine next a.b.c.d version
         id: semver
         env:
           GH_REPO: ${{ github.repository }}
@@ -24,57 +25,59 @@ jobs:
         run: |
           set -euo pipefail
 
-          # Query the latest (non-draft, non-prerelease) release
-          HTTP_CODE=$(mktemp)
-          RESP=$(curl -sS -w "%{http_code}" \
+          # Fetch the latest non-draft, non-prerelease release
+          http_code=$(mktemp)
+          body=$(curl -sS \
             -H "Authorization: Bearer ${GITHUB_TOKEN}" \
             -H "Accept: application/vnd.github+json" \
+            -w "%{http_code}" \
             "https://api.github.com/repos/${GH_REPO}/releases/latest" \
-            -o >(tee response.json) )
-          
-          # If there's no release yet, start from 0.0.0
-          if [ "${RESP}" = "404" ]; then
-            LATEST_TAG="0.0.0"
-            PREFIX=""
+            -o response.json)
+          status="${body:(-3)}" || true
+
+          if [ "${status}" = "404" ]; then
+            # No releases yet
+            tag_raw="0.0.0.0"
           else
-            TAG=$(jq -r '.tag_name' response.json)
-            if [ "${TAG}" = "null" ] || [ -z "${TAG}" ]; then
-              LATEST_TAG="0.0.0"
-              PREFIX=""
-            else
-              LATEST_TAG="${TAG}"
+            tag_raw="$(jq -r '.tag_name // empty' response.json)"
+            if [ -z "${tag_raw}" ] || [ "${tag_raw}" = "null" ]; then
+              tag_raw="0.0.0.0"
             fi
-            # Preserve a leading 'v' if present
-            if [[ "${LATEST_TAG}" =~ ^v ]]; then
-              PREFIX="v"
-              BASE="${LATEST_TAG#v}"
-            else
-              PREFIX=""
-              BASE="${LATEST_TAG}"
-            fi
-            LATEST_TAG="${BASE}"
           fi
 
-          # Validate and bump patch
-          if [[ ! "${LATEST_TAG}" =~ ^([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
-            echo "Latest tag '${LATEST_TAG}' is not x.y.z; aborting." >&2
+          # Preserve leading 'v' if present
+          if [[ "${tag_raw}" =~ ^v(.+)$ ]]; then
+            prefix="v"
+            base="${BASH_REMATCH[1]}"
+          else
+            prefix=""
+            base="${tag_raw}"
+          fi
+
+          # Expect a.b.c.d
+          if [[ ! "${base}" =~ ^([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
+            echo "Latest tag '${tag_raw}' is not in a.b.c.d format" >&2
             exit 1
           fi
 
-          MAJOR="${BASH_REMATCH[1]}"
-          MINOR="${BASH_REMATCH[2]}"
-          PATCH="${BASH_REMATCH[3]}"
-          NEXT_PATCH=$((PATCH + 1))
-          NEXT="${MAJOR}.${MINOR}.${NEXT_PATCH}"
-          NEXT_TAG="${PREFIX}${NEXT}"
+          A="${BASH_REMATCH[1]}"
+          B="${BASH_REMATCH[2]}"
+          C="${BASH_REMATCH[3]}"
+          D="${BASH_REMATCH[4]}"
 
-          echo "latest=${PREFIX}${MAJOR}.${MINOR}.${PATCH}" >> "$GITHUB_OUTPUT"
-          echo "next=${NEXT}" >> "$GITHUB_OUTPUT"
-          echo "next_tag=${NEXT_TAG}" >> "$GITHUB_OUTPUT"
+          NEXT_D=$((D + 1))
+          next="${A}.${B}.${C}.${NEXT_D}"
+          next_tag="${prefix}${next}"
+          latest="${prefix}${A}.${B}.${C}.${D}"
 
-          echo "Will create release: ${NEXT_TAG}"
+          echo "latest=${latest}"     >> "$GITHUB_OUTPUT"
+          echo "next=${next}"         >> "$GITHUB_OUTPUT"
+          echo "next_tag=${next_tag}" >> "$GITHUB_OUTPUT"
 
-      - name: Create GitHub Release
+          echo "Latest: ${latest}"
+          echo "Next:   ${next_tag}"
+
+      - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.semver.outputs.next_tag }}
