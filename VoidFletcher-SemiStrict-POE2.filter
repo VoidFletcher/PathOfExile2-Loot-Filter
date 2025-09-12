@@ -705,10 +705,10 @@ Show
 # Hide Low-Tier Bases
 # ================================================================
 # ==== Exclusions ======================================
+# ALl base belts are now worth 2-3ex+ each due to ancients omen + chance.
 Show
     Class "Belts"
     Rarity == Normal
-    BaseType "Heavy Belt"
 
 # ==== Armor ======================================
 # All armor that is magic or normal and lower than ilvl 82. ilvl 82 and above are required for some of the high tier craft
