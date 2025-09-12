@@ -1,4 +1,4 @@
-name: Auto Minor (c) Release
+name: Auto Patch Release
 
 on:
   push:
