@@ -1,4 +1,4 @@
-name: Auto Patch Release
+name: Auto Minor (c) Release
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Determine next a.b.c.d version
+      - name: Determine next a.b.c.d (bump c, reset d)
         id: semver
         env:
           GH_REPO: ${{ github.repository }}
@@ -25,24 +25,21 @@ jobs:
         run: |
           set -euo pipefail
 
-          # Fetch the latest non-draft, non-prerelease release
-          http_code=$(mktemp)
-          body=$(curl -sS \
+          # Fetch latest non-draft/non-prerelease release
+          http_status=$(mktemp)
+          curl -sS \
             -H "Authorization: Bearer ${GITHUB_TOKEN}" \
             -H "Accept: application/vnd.github+json" \
             -w "%{http_code}" \
             "https://api.github.com/repos/${GH_REPO}/releases/latest" \
-            -o response.json)
-          status="${body:(-3)}" || true
+            -o response.json >"$http_status"
+          status=$(cat "$http_status")
 
           if [ "${status}" = "404" ]; then
-            # No releases yet
             tag_raw="0.0.0.0"
           else
             tag_raw="$(jq -r '.tag_name // empty' response.json)"
-            if [ -z "${tag_raw}" ] || [ "${tag_raw}" = "null" ]; then
-              tag_raw="0.0.0.0"
-            fi
+            [ -z "${tag_raw}" ] || [ "${tag_raw}" = "null" ] && tag_raw="0.0.0.0"
           fi
 
           # Preserve leading 'v' if present
@@ -65,14 +62,17 @@ jobs:
           C="${BASH_REMATCH[3]}"
           D="${BASH_REMATCH[4]}"
 
-          NEXT_D=$((D + 1))
-          next="${A}.${B}.${C}.${NEXT_D}"
+          NEXT_C=$((C + 1))
+          NEXT_D=0
+          next="${A}.${B}.${NEXT_C}.${NEXT_D}"
           next_tag="${prefix}${next}"
           latest="${prefix}${A}.${B}.${C}.${D}"
 
-          echo "latest=${latest}"     >> "$GITHUB_OUTPUT"
-          echo "next=${next}"         >> "$GITHUB_OUTPUT"
-          echo "next_tag=${next_tag}" >> "$GITHUB_OUTPUT"
+          {
+            echo "latest=${latest}"
+            echo "next=${next}"
+            echo "next_tag=${next_tag}"
+          } >> "$GITHUB_OUTPUT"
 
           echo "Latest: ${latest}"
           echo "Next:   ${next_tag}"
