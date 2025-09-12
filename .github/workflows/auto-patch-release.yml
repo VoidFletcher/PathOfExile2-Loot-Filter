@@ -2,7 +2,7 @@ name: Auto Patch Release
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 permissions:
   contents: write   # needed to create releases and tags
