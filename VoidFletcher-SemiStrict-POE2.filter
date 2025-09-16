@@ -10,6 +10,13 @@
 # ================================================================
 # Change List:
 # ---------------------------------------------------------------
+# Version 0.3.4
+# - Economy update for gems
+# - Added proper support for lineage gems
+# Version 0.3.3
+# - Belt improvements
+# Version 0.3.2
+# - Show all normal quality belts
 # Version 0.3.1 (3 September 2025)
 # - Fixed filter to work with Abyss league.
 # - Updated versioning to mirror POE version scheme.
@@ -232,8 +239,7 @@ Show
 # ==== Spirit Gems ========================================
 
 Show
-    BaseType "Uncut Spirit Gem"
-    ItemLevel >= 20
+    BaseType "Uncut Spirit Gem (Level 20)"
     #Legendary
         SetFontSize 45
         SetTextColor 255 0 0 255
@@ -245,8 +251,7 @@ Show
         
 
 Show
-    BaseType "Uncut Spirit Gem"
-    ItemLevel == 19
+    BaseType "Uncut Spirit Gem (Level 19)" "Uncut Spirit Gem (Level 8)" "Uncut Spirit Gem (Level 9)" "Uncut Spirit Gem (Level 4)" "Uncut Spirit Gem (Level 6)" "Uncut Spirit Gem (Level 7)" "Uncut Spirit Gem (Level 14)" "Uncut Spirit Gem (Level 11)"
     #Diamond
             SetFontSize 36
             SetTextColor 84 204 200
@@ -255,32 +260,40 @@ Show
             MinimapIcon 2 Blue Cross
             PlayEffect Cyan
             PlayAlertSound 4 300
-  
+
+            
 Show
-    BaseType "Uncut Spirit Gem"
-    ItemLevel == 8
+    BaseType "Uncut Spirit Gem (Level 10)" "Uncut Spirit Gem (Level 5)" "Uncut Spirit Gem (Level 15)" "Uncut Spirit Gem (Level 13)" "Uncut Spirit Gem (Level 16)"
+    #Diamond
+            SetFontSize 36
+            SetTextColor 84 204 200
+            SetBorderColor 84 204 200
+            SetBackgroundColor 255 255 255 255
+            MinimapIcon 2 Blue Cross
+            PlayEffect Cyan
+            PlayAlertSound 4 300
+            
+Show
+    BaseType "Uncut Spirit Gem (Level 12)" "Uncut Spirit Gem (Level 17)"
     #Gold
-        SetTextColor 255 207 132
-        SetBorderColor 255 207 132
-        PlayEffect Yellow
-        PlayAlertSound 3 300
-        MinimapIcon 2 Yellow Kite
-  
+            SetTextColor 255 207 132
+            SetBorderColor 255 207 132
+            PlayEffect Yellow
+            PlayAlertSound 3 300
+            MinimapIcon 2 Yellow Kite
+            
 Show
-    BaseType "Uncut Spirit Gem"
-    ItemLevel <= 18
-    #Bronze
-        SetFontSize 28
-        SetTextColor 255 207 132
-        SetBorderColor 255 207 132
-        MinimapIcon 2 White Circle
-  
+    Class "Uncut Spirit Gem"
+    #Wood
+        SetFontSize 22
+        SetTextColor 163 152 124
+        SetBorderColor 163 152 124
+        SetBackgroundColor 52 46 35 200
   
 # ==== Skill Gems ========================================
 
 Show
-    BaseType "Uncut Skill Gem"
-    ItemLevel >= 20
+    BaseType "Uncut Skill Gem (Level 20)"
     #Legendary
         SetFontSize 45
         SetTextColor 255 0 0 255
@@ -289,26 +302,96 @@ Show
         PlayAlertSound 6 300
         PlayEffect Red
         MinimapIcon 0 Red Star
-  
+        
 Show
-  BaseType "Uncut Skill Gem"
-  ItemLevel <= 19
-  #Bronze
-    SetFontSize 28
-    SetTextColor 255 207 132
-    SetBorderColor 255 207 132
-    MinimapIcon 2 White Circle
+    BaseType "Uncut Skill Gem (Level 1)" "Uncut Skill Gem (Level 8)"
+    #Diamond
+            SetFontSize 36
+            SetTextColor 84 204 200
+            SetBorderColor 84 204 200
+            SetBackgroundColor 255 255 255 255
+            MinimapIcon 2 Blue Cross
+            PlayEffect Cyan
+            PlayAlertSound 4 300
+            
+Show
+    BaseType "Uncut Skill Gem (Level 7)" "Uncut Skill Gem (Level 2)" "Uncut Skill Gem (Level 4)" "Uncut Skill Gem (Level 5)" "Uncut Skill Gem (Level 9)"
+    #Gold
+            SetTextColor 255 207 132
+            SetBorderColor 255 207 132
+            PlayEffect Yellow
+            PlayAlertSound 3 300
+            MinimapIcon 2 Yellow Kite
+           
+Show
+    BaseType "Uncut Skill Gem"
+    #Wood
+        SetFontSize 22
+        SetTextColor 163 152 124
+        SetBorderColor 163 152 124
+        SetBackgroundColor 52 46 35 200  
+
     
 # ==== Support Gems ========================================
 
 Show
-    BaseType "Uncut Support Gem"
-    ItemLevel >= 1
-    #Bronze
-        SetFontSize 28
-        SetTextColor 255 207 132
-        SetBorderColor 255 207 132
-        MinimapIcon 2 White Circle
+    BaseType "Dialla's Desire" "Rakiata's Flow" "Arjun's Medal" "Uhtred's Augury" "Uul-Netol's Embrace" "Uhtred's Omen" "Atalui's Bloodletting" "Ratha's Assault"
+    #Legendary
+        SetFontSize 45
+        SetTextColor 255 0 0 255
+        SetBorderColor 255 0 0 255
+        SetBackgroundColor 255 255 255 255
+        PlayAlertSound 6 300
+        PlayEffect Red
+        MinimapIcon 0 Red Star
+        
+Show
+    BaseType "Esh's Radiance" "Ixchel's Torment" "Rigwald's Ferocity" "Tul's Stillness" "Uhtred's Exodus" "Brutus' Brain" "Ailith's Chimes" "Garukhan's Resolve" "Piety's Mercy" "Doedre's Undoing"
+    #Diamond
+            SetFontSize 36
+            SetTextColor 84 204 200
+            SetBorderColor 84 204 200
+            SetBackgroundColor 255 255 255 255
+            MinimapIcon 2 Blue Cross
+            PlayEffect Cyan
+            PlayAlertSound 4 300
+            
+Show
+    BaseType "Esh's Radiance" "Ixchel's Torment" "Rigwald's Ferocity" "Tul's Stillness" "Uhtred's Exodus" "Brutus' Brain" "Ailith's Chimes" "Garukhan's Resolve" "Piety's Mercy"
+    #Diamond
+            SetFontSize 36
+            SetTextColor 84 204 200
+            SetBorderColor 84 204 200
+            SetBackgroundColor 255 255 255 255
+            MinimapIcon 2 Blue Cross
+            PlayEffect Cyan
+            PlayAlertSound 4 300
+            
+Show
+    BaseType "Daresso's Passion" "Varashta's Blessing" "Arakaali's Lust" "Tacati's Ire" "Kurgal's Leash"
+    #Wood
+            SetFontSize 22
+            SetTextColor 163 152 124
+            SetBorderColor 163 152 124
+            SetBackgroundColor 52 46 35 200
+    
+
+Show
+    BaseType "Doedre's Undoing" "Xoph's Pyre" "Einhar's Beastrite" "Tecrod's Revenge" "Zarokh's Refrain" "Paquate's Pact" "Kulemak's Dominion" "Ahn's Citadel" "Tawhoa's Tending" "Sione's Temper" "Uruk's Smelting" 
+    #Gold
+            SetTextColor 255 207 132
+            SetBorderColor 255 207 132
+            PlayEffect Yellow
+            PlayAlertSound 3 300
+            MinimapIcon 2 Yellow Kite
+
+Show
+    Class "Uncut Support Gem"
+    #Wood
+        SetFontSize 22
+        SetTextColor 163 152 124
+        SetBorderColor 163 152 124
+        SetBackgroundColor 52 46 35 200
   
 # ================================================================
 # Currency
