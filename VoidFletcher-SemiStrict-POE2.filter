@@ -10,6 +10,9 @@
 # ================================================================
 # Change List:
 # ---------------------------------------------------------------
+# Version 0.3.5
+# - Economy update
+# - Omens & Bones support
 # Version 0.3.4
 # - Economy update for gems
 # - Added proper support for lineage gems
@@ -392,7 +395,93 @@ Show
         SetTextColor 163 152 124
         SetBorderColor 163 152 124
         SetBackgroundColor 52 46 35 200
-  
+        
+# ================================================================
+# Bones
+# ================================================================
+Show
+    BaseType "Ancient Collarbone" "Ancient Jawbone" "Ancient Rib"
+    #Legendary
+        SetFontSize 45
+        SetTextColor 255 0 0 255
+        SetBorderColor 255 0 0 255
+        SetBackgroundColor 255 255 255 255
+        PlayAlertSound 6 300
+        PlayEffect Red
+        MinimapIcon 0 Red Star
+        
+Show
+    BaseType "Preserved Cranium" "Kulemak's Invitation" "Preserved Collarbone"
+    #Diamond
+            SetFontSize 36
+            SetTextColor 84 204 200
+            SetBorderColor 84 204 200
+            SetBackgroundColor 255 255 255 255
+            MinimapIcon 2 Blue Cross
+            PlayEffect Cyan
+            PlayAlertSound 4 300
+            
+Show
+    BaseType "Preserved Vertebrae" "Gnawed Collarbone"
+    #Gold
+            SetTextColor 255 207 132
+            SetBorderColor 255 207 132
+            PlayEffect Yellow
+            PlayAlertSound 3 300
+            MinimapIcon 2 Yellow Kite
+
+Show
+    BaseType "Gnawed Rib" "Preserved Rib" "Gnawed Jawbone" "Preserved Jawbone"
+    #Wood
+        SetFontSize 22
+        SetTextColor 163 152 124
+        SetBorderColor 163 152 124
+        SetBackgroundColor 52 46 35 200
+        
+# ================================================================
+# Omens
+# ================================================================
+
+Show
+    BaseType "Omen of Chance" "Omen of Sinistral Annulment" "Omen of Sinistral Erasure" "Omen of Light" "Omen of Dextral Annulment" "Omen of Dextral Erasure" "Omen of Whittling" "Omen of Sanctification"
+    #Legendary
+        SetFontSize 45
+        SetTextColor 255 0 0 255
+        SetBorderColor 255 0 0 255
+        SetBackgroundColor 255 255 255 255
+        PlayAlertSound 6 300
+        PlayEffect Red
+        MinimapIcon 0 Red Star
+        
+Show
+    BaseType "Omen of Homogenising Exaltation" "Omen of Abyssal Echoes" "Omen of Recombination" "Omen of Sinistral Crystallisation" "Omen of Secret Compartments" "Omen of Chaotic Rarity" "Omen of Dextral Crystallisation" "Omen of the Hunt" "Omen of Amelioration" "Omen of Sinistral Necromancy"
+    #Diamond
+            SetFontSize 36
+            SetTextColor 84 204 200
+            SetBorderColor 84 204 200
+            SetBackgroundColor 255 255 255 255
+            MinimapIcon 2 Blue Cross
+            PlayEffect Cyan
+            PlayAlertSound 4 300
+            
+Show
+    BaseType "Omen of Reinforcements" "Omen of Corruption" "Omen of Homogenising Coronation" "Omen of the Blessed" "Omen of Catalysing Exaltation" "Omen of the Ancients" "Omen of Dextral Exaltation" "Omen of Bartering" "Omen of Answered Prayers" "Omen of Putrefaction" "Omen of Sinistral Exaltation" "Omen of Chaotic Monsters" "Omen of Chaotic Quantity" "Omen of the Sovereign" "Omen of Greater Exaltation"
+    #Gold
+            SetTextColor 255 207 132
+            SetBorderColor 255 207 132
+            PlayEffect Yellow
+            PlayAlertSound 3 300
+            MinimapIcon 2 Yellow Kite
+            
+Show
+    BaseType "Omen of Dextral Necromancy" "Omen of Resurgence" "Omen of the Blackblooded" "Petition Splinter" "Omen of Refreshment" "Omen of Gambling" "Omen of the Liege"
+    #Wood
+        SetFontSize 22
+        SetTextColor 163 152 124
+        SetBorderColor 163 152 124
+        SetBackgroundColor 52 46 35 200
+    
+
 # ================================================================
 # Currency
 # ================================================================
@@ -400,7 +489,7 @@ Show
 # ==== Div+ (God Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Mirror" "Divine" "Perfect Jeweller's Orb" "Perfect Exalted Orb"
+    BaseType "Mirror" "Divine" "Perfect Exalted Orb"
     #Legendary
         SetFontSize 45
         SetTextColor 255 0 0 255
@@ -413,7 +502,7 @@ Show
 # ==== MultiExalt+ (Great Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Greater Jeweller's Orb" "Greater Exalted Orb" "Perfect Regal Orb"
+    BaseType "Perfect Regal Orb" "Orb of Chance" "Chaos" "Annulment" "Perfect Jeweller's Orb"
     #Diamond
             SetFontSize 36
             SetTextColor 84 204 200
@@ -426,7 +515,7 @@ Show
 # ==== Exalt+ (Good Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Exalted Orb" "Annulment" "Chaos" "Orb of Chance" "Gemcutter" "Vaal" "Greater Regal Orb"
+    BaseType "Exalted Orb" "Gemcutter" "Vaal" "Greater Regal Orb" "Chance Shard" "Greater Exalted Orb"
     #Gold
             SetTextColor 255 207 132
             SetBorderColor 255 207 132
@@ -448,7 +537,7 @@ Show
 # Creator Note: Why tf are you picking this up?
 Show
     Class "Currency"
-    BaseType "Scroll of Wisdom" "Transmutation" "Augmentation" "Greater Orb of Transmutation" "Greater Orb of Augmentation" "Blacksmith's Whetstone" "Arcanist's Etcher" "Artificer" "Chance Shard" "Lesser Jeweller's Orb"
+    BaseType "Scroll of Wisdom" "Transmutation" "Augmentation" "Greater Orb of Transmutation" "Greater Orb of Augmentation" "Blacksmith's Whetstone" "Arcanist's Etcher" "Artificer" "Lesser Jeweller's Orb" "Greater Jeweller's Orb"
     #Wood
         SetFontSize 22
         SetTextColor 163 152 124
