@@ -10,6 +10,8 @@
 # ================================================================
 # Change List:
 # ---------------------------------------------------------------
+# Version 0.3.6
+# - Added support for important runes.
 # Version 0.3.5
 # - Economy update
 # - Omens & Bones support
@@ -480,6 +482,33 @@ Show
         SetTextColor 163 152 124
         SetBorderColor 163 152 124
         SetBackgroundColor 52 46 35 200
+        
+        
+# ================================================================
+# Runes
+# ================================================================
+
+Show
+    BaseType "Hedgewitch Assandra's Rune of Wisdom" "Farrul's Rune of the Chase" "Countess Seske's Rune of Archery"
+    #Legendary
+            SetFontSize 45
+            SetTextColor 255 0 0 255
+            SetBorderColor 255 0 0 255
+            SetBackgroundColor 255 255 255 255
+            PlayAlertSound 6 300
+            PlayEffect Red
+            MinimapIcon 0 Red Star
+
+Show
+    BaseType "Saqawal's Rune of the Sky" "Thane Leld's Rune of Spring" "Greater Rune of Nobility" "Saqawal's Rune of Memory" "Iron Rune" "Saqawal's Rune of Erosion" "Storm Rune" "Vision Rune" "Farrul's Rune of Grace" "Courtesan Mannan's Rune of Cruelty" "The Greatwolf's Rune of Willpower" "Greater Rune of Leadership" "Greater rune of Tithing" "Lesser Storm Rune" "Greater Rune of Alacrity" "Thane Girt's Rune of Wildness" "Lesser Iron Rune" "Fenumus' Rune of Spinning" "Adept Rune"
+    #Diamond
+            SetFontSize 36
+            SetTextColor 84 204 200
+            SetBorderColor 84 204 200
+            SetBackgroundColor 255 255 255 255
+            MinimapIcon 2 Blue Cross
+            PlayEffect Cyan
+            PlayAlertSound 4 300
     
 
 # ================================================================
