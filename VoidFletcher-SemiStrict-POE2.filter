@@ -10,6 +10,8 @@
 # ================================================================
 # Change List:
 # ---------------------------------------------------------------
+# Version 0.3.7
+# - Rune and Essence Market Update.
 # Version 0.3.6
 # - Added support for important runes.
 # Version 0.3.5
@@ -500,7 +502,7 @@ Show
             MinimapIcon 0 Red Star
 
 Show
-    BaseType "Saqawal's Rune of the Sky" "Thane Leld's Rune of Spring" "Greater Rune of Nobility" "Saqawal's Rune of Memory" "Iron Rune" "Saqawal's Rune of Erosion" "Storm Rune" "Vision Rune" "Farrul's Rune of Grace" "Courtesan Mannan's Rune of Cruelty" "The Greatwolf's Rune of Willpower" "Greater Rune of Leadership" "Greater rune of Tithing" "Lesser Storm Rune" "Greater Rune of Alacrity" "Thane Girt's Rune of Wildness" "Lesser Iron Rune" "Fenumus' Rune of Spinning" "Adept Rune"
+    BaseType "Saqawal's Rune of the Sky" "Thane Leld's Rune of Spring" "Greater Rune of Nobility" "Saqawal's Rune of Erosion" "Vision Rune" "Farrul's Rune of Grace" "Courtesan Mannan's Rune of Cruelty" "The Greatwolf's Rune of Willpower" "Greater Rune of Leadership" "Greater rune of Tithing" "Greater Rune of Alacrity" "Thane Girt's Rune of Wildness" "Fenumus' Rune of Spinning"
     #Diamond
             SetFontSize 36
             SetTextColor 84 204 200
@@ -509,6 +511,15 @@ Show
             MinimapIcon 2 Blue Cross
             PlayEffect Cyan
             PlayAlertSound 4 300
+
+Show
+    BaseType "Rune"
+    #Gold
+                SetTextColor 255 207 132
+                SetBorderColor 255 207 132
+                PlayEffect Yellow
+                PlayAlertSound 3 300
+                MinimapIcon 2 Yellow Kite
     
 
 # ================================================================
@@ -620,7 +631,7 @@ Show
 # ==== Div+ (God Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Greater Essence of Haste"
+    BaseType "Essence of Horror" "Essence of Hysteria"
     #Legendary
         SetFontSize 45
         SetTextColor 255 0 0 255
@@ -633,7 +644,7 @@ Show
 # ==== MultiExalt+ (Great Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Greater Essence of the Mind" "Greater Essence of Enhancement" "Greater Essence of the Infinite" "Greater Essence of Electricity" "Greater Essence of Sorcery" "Greater Essence of Ruin"
+    BaseType "Essence of the Abyss" "Essence of Delirium" "Perfect Essence of Battle" "Perfect Essence of Haste" "Greater Essence of Opulence"
     #Diamond
         SetFontSize 36
         SetTextColor 84 204 200
@@ -646,7 +657,7 @@ Show
 # ==== Exalt+ (Good Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Greater Essence of the Body" "Greater Essence of Flames" "Greater Essence of Battle" "Greater Essence of Ice" "Essence of Electricity" "Essence of Haste"
+    BaseType "Greater Essence of Ruin" "Greater Essence of Electricity" ""
     #Gold
             SetTextColor 255 207 132
             SetBorderColor 255 207 132
@@ -657,7 +668,7 @@ Show
 # ==== Regals+ (Decent Tier) ========================================
 Show
     Class "Currency"
-    BaseType "Essence of the Body" "Essence of the Mind" "Essence of Enhancement" "Essence of the Infinite" "Essence of Flames" "Essence of Ice" "Essence of Battle" "Essence of Sorcery" "Essence of Ruin"
+    BaseType "Essence"
     #Bronze
         SetFontSize 28
         SetTextColor 255 207 132
