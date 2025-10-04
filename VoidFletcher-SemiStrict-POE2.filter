@@ -10,6 +10,8 @@
 # ================================================================
 # Change List:
 # ---------------------------------------------------------------
+# Version 0.3.9
+# - Made strict T15's work better.
 # Version 0.3.8
 # - Made filter more strict.
 # Version 0.3.7
@@ -950,7 +952,7 @@ Hide
     ItemLevel < 82
     Sockets < 2
     Quality == 0
-    AreaLevel >= 80
+    AreaLevel >= 79
     
 # ==== Weapons ======================================
 # All armor that is magic or normal and lower than ilvl 82. ilvl 82 and above are required for some of the high tier craft
@@ -961,7 +963,7 @@ Hide
     ItemLevel < 82
     Sockets < 2
     Quality == 0
-    AreaLevel >= 80
+    AreaLevel >= 79
 
 # ==== Jewelery ======================================
 # Hide all low ilvl normal and magic jewelery. This includes rings, amulets and belts.
@@ -970,7 +972,7 @@ Hide
     Rarity <= Rare
     ItemLevel <= 82
     Quality == 0
-    AreaLevel >= 80
+    AreaLevel >= 79
         
 # ==== Flasks ======================================
 # Hide all non-unique flasks.
