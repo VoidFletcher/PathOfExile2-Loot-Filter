@@ -10,6 +10,8 @@
 # ================================================================
 # Change List:
 # ---------------------------------------------------------------
+# Version 0.3.8
+# - Made filter more strict.
 # Version 0.3.7
 # - Rune and Essence Market Update.
 # Version 0.3.6
@@ -944,56 +946,31 @@ Show
 # rolls. So we want to ignore lower tier bases. Also explicitly hides low desired bases.
 Hide
     Class "Armour" "Boots" "Helmet" "Gloves" "Body Armour" "Belt" "Amulet" "Ring"
-    Rarity < Rare
+    Rarity <= Rare
     ItemLevel < 82
+    Sockets < 2
     Quality == 0
-
-# TODO: Removed placeholder, test then remove.
-#Hide
-#    Class "Armour" "Boots" "Helmet" "Gloves" "Body Armour" "Belt" "Amulet" "Ring"
-#    BaseType "Advanced "
-#    Rarity < Rare
-#    Quality == 0
-
-# TODO: Removed placeholder, test then remove.    
-# The following are currently low-desired armor bases worth less than 1 exalt per inventory slot they take.
-#Hide
-#    Class "Armour" "Boots" "Helmet" "Gloves" "Body Armour" "Belt" "Amulet" "Ring"
-#    BaseType "Expert Pathfinder Coat" "Expert Studded Vest" "Expert Serpentscale Coat" "Expert Wayfarer Jacket" "Expert Scalper's Jacket" "Expert Hexer's Robe" "Expert Keth Raiment" "Expert Altar Robe" "Expert Iron Cuirass" "Expert Steel Plate" "Expert Vaal Cuirass" "Expert Rogue Armour" "Expert Cloaked Mail" "Expert Scale Mail" "Expert Shaman Mantle" "Expert Sacrificial Mantle" "Expert Stone Greaves" "Expert Mail Sabatons" "Expert Pelt Leggings" "Expert Sectioned Bracers" "Expert Spined Bracers" "Expert Spiral Wraps" "Expert Intricate Gloves" "Expert Moulded Mitts" "Expert Doubled Gauntlets" "Expert Hunter Hood" "Expert Tribal Mask" "Expert Wicker Tiara" "Expert Chain Tiara" "Expert Feathered Tiara" "Expert Elite Greathelm" "Expert Shielded Helm" "Expert Heavy Crown" ""
-#    Rarity < Rare
-#    Quality == 0
+    AreaLevel >= 80
     
 # ==== Weapons ======================================
 # All armor that is magic or normal and lower than ilvl 82. ilvl 82 and above are required for some of the high tier craft
 # rolls. So we want to ignore lower tier bases. Also explicitly hides low desired bases.
 Hide
-    Class "One Hand Maces" "Two Hand Maces" "Shield" "Quiver" "Bow" "Claw" "Dagger" "One Hand Axe" "Two Hand Axe" "One Hand Sword" "Two Hand Sword" "Wands" "Sceptre" "Staff" "Quivers" "Focus"
-    Rarity < Rare
+    Class "One Hand Maces" "Two Hand Maces" "Shield" "Quiver" "Bow" "Claw" "Dagger" "One Hand Axe" "Two Hand Axe" "One Hand Sword" "Two Hand Sword" "Wands" "Sceptre" "Staff" "Quivers" "Focus" "Spear"
+    Rarity <= Rare
     ItemLevel < 82
+    Sockets < 2
     Quality == 0
+    AreaLevel >= 80
 
-# TODO: Removed placeholder, test then remove.        
-#Hide
-#    Class "One Hand Maces" "Two Hand Maces" "Shield" "Quiver" "Bow" "Claw" "Dagger" "One Hand Axe" "Two Hand Axe" "One Hand Sword" "Two Hand Sword" "Wands" "Sceptre" "Staff" "Quivers" "Focus"
-#    BaseType "Advanced "
-#    Rarity < Rare
-#    Quality == 0
-
-# TODO: Removed placeholder, test then remove.        
-# The following are currently low-desired weapon bases worth less than 1 exalt per inventory slot they take.
-#Hide
-#    Class "One Hand Maces" "Two Hand Maces" "Shield" "Quiver" "Bow" "Claw" "Dagger" "One Hand Axe" "Two Hand Axe" "One Hand Sword" "Two Hand Sword" "Wands" "Sceptre" "Staff" "Focus"
-#    BaseType "Expert Antler Focus" "Expert Crystal Focus" "Expert Plumed Focus" "Expert Smithing Hammer" "Expert Brigand Mace" "Expert Construct Hammer" "Expert Shortbow" "Expert Warden Bow" "Expert Composite Bow" "Expert Cultist Bow" "Expert Zealot Bow" "Expert Tense Crossbow" "Expert Sturdy Crossbow" "Expert Bombard Crossbow" "Expert Forlorn Crossbow" "Expert Long Quarterstaff" "Expert Crackling Quarterstaff" "Expert Crescent Quarterstaff" "Expert Barrier Quarterstaff" "Expert Oak Greathammer" "Expert Forge Maul" "Expert Cultist Greathammer" "Expert Temple Maul" "Expert Leaden Greathammer" "Expert Crumbling Maul" "Volant Quiver" "Visceral Quiver" "Bone Wand" "Withered Wand" "Volatile Wand" "Expert Warpick" "Voltaic Staff" "Gelid Staff" "Rattling Sceptre" "Expert Rampart Tower Shield" "Expert Feathered Targe" "Expert Slim Mace" "Expert Plated Mace"
-#    Rarity < Rare
-#    Quality == 0
-    
 # ==== Jewelery ======================================
 # Hide all low ilvl normal and magic jewelery. This includes rings, amulets and belts.
 Hide
     Class "Ring" "Amulet" "Belt"
-    Rarity < Rare
-    ItemLevel < 82
+    Rarity <= Rare
+    ItemLevel <= 82
     Quality == 0
+    AreaLevel >= 80
         
 # ==== Flasks ======================================
 # Hide all non-unique flasks.
@@ -1006,5 +983,11 @@ Hide
 Hide
     Class "Charms"
         Rarity < Rare
+
+# ==== T15+ Rares ======================================
+Hide
+    Rarity < Rare
+    AreaLevel >= 80
+    Sockets < 2
 
 # ================================================================
