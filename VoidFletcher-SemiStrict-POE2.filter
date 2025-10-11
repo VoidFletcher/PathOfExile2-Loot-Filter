@@ -10,6 +10,8 @@
 # ================================================================
 # Change List:
 # ---------------------------------------------------------------
+# Version 0.3.10
+# - Improved tablet and equipment filtering.
 # Version 0.3.9
 # - Made strict T15's work better.
 # Version 0.3.8
@@ -190,10 +192,43 @@ Show
 # ================================================================
 # Precursor Tablets
 # ================================================================
-  
+
 Show
     BaseType "Precursor Tablet"
-    Rarity >= Magic
+    Rarity == Unique
+    #Unique Precursor Tablet
+        SetTextColor 175 96 37
+        SetBorderColor 76 14 128
+        PlayAlertSound 4 300
+        PlayEffect Purple
+        MinimapIcon 1 Purple Square
+        SetFontSize 26
+        
+Show
+    BaseType "Ritual Precursor Tablet" "Breach Precursor Tablet"
+    Rarity == Unique
+    #Unique In-Demand Precursor Tablet
+        SetTextColor 175 96 37
+        SetBorderColor 76 14 128
+        PlayAlertSound 4 300
+        PlayEffect Purple
+        MinimapIcon 1 Purple Square
+        SetFontSize 26
+
+Show
+    BaseType "Precursor Tablet"
+    Rarity == Rare
+    #Rare Precursor Tablet
+        SetTextColor 255 255 119
+        SetBorderColor 76 14 128
+        PlayAlertSound 4 300
+        PlayEffect Purple
+        MinimapIcon 1 Purple Square
+        SetFontSize 26
+
+Show
+    BaseType "Precursor Tablet"
+    Rarity == Magic
     #Magic Precursor Tablet
         SetTextColor 122 151 254
         SetBorderColor 76 14 128
@@ -506,7 +541,7 @@ Show
             MinimapIcon 0 Red Star
 
 Show
-    BaseType "Saqawal's Rune of the Sky" "Thane Leld's Rune of Spring" "Greater Rune of Nobility" "Saqawal's Rune of Erosion" "Vision Rune" "Farrul's Rune of Grace" "Courtesan Mannan's Rune of Cruelty" "The Greatwolf's Rune of Willpower" "Greater Rune of Leadership" "Greater rune of Tithing" "Greater Rune of Alacrity" "Thane Girt's Rune of Wildness" "Fenumus' Rune of Spinning"
+    BaseType "Saqawal's Rune of the Sky" "Thane Leld's Rune of Spring" "Greater Rune of Nobility" "Saqawal's Rune of Erosion" "Farrul's Rune of Grace" "Courtesan Mannan's Rune of Cruelty" "The Greatwolf's Rune of Willpower" "Greater Rune of Leadership" "Greater rune of Tithing" "Greater Rune of Alacrity" "Thane Girt's Rune of Wildness" "Fenumus' Rune of Spinning"
     #Diamond
             SetFontSize 36
             SetTextColor 84 204 200
@@ -518,12 +553,12 @@ Show
 
 Show
     BaseType "Rune"
-    #Gold
-                SetTextColor 255 207 132
-                SetBorderColor 255 207 132
-                PlayEffect Yellow
-                PlayAlertSound 3 300
-                MinimapIcon 2 Yellow Kite
+    Class "Socketable"
+    #Wood
+            SetFontSize 22
+            SetTextColor 163 152 124
+            SetBorderColor 163 152 124
+            SetBackgroundColor 52 46 35 200
     
 
 # ================================================================
@@ -583,7 +618,7 @@ Show
     Class "Currency"
     BaseType "Scroll of Wisdom" "Transmutation" "Augmentation" "Greater Orb of Transmutation" "Greater Orb of Augmentation" "Blacksmith's Whetstone" "Arcanist's Etcher" "Artificer" "Lesser Jeweller's Orb" "Greater Jeweller's Orb"
     #Wood
-        SetFontSize 22
+        SetFontSize 18
         SetTextColor 163 152 124
         SetBorderColor 163 152 124
         SetBackgroundColor 52 46 35 200
@@ -954,6 +989,19 @@ Hide
     Quality == 0
     AreaLevel >= 79
     
+Show
+    Class "Gloves" "Helmet" "Boots" "Belt"
+    Sockets == 2
+    SetFontSize 36
+    SetBorderColor 84 204 200
+    
+Show
+    Class "Body Armour"
+    Sockets == 3
+    SetFontSize 36
+    SetBorderColor 84 204 200
+    
+    
 # ==== Weapons ======================================
 # All armor that is magic or normal and lower than ilvl 82. ilvl 82 and above are required for some of the high tier craft
 # rolls. So we want to ignore lower tier bases. Also explicitly hides low desired bases.
@@ -964,6 +1012,12 @@ Hide
     Sockets < 2
     Quality == 0
     AreaLevel >= 79
+    
+Show
+    Class "Wands" "Sceptre"
+    Sockets == 2
+    SetFontSize 36
+    SetBorderColor 84 204 200
 
 # ==== Jewelery ======================================
 # Hide all low ilvl normal and magic jewelery. This includes rings, amulets and belts.
@@ -985,11 +1039,5 @@ Hide
 Hide
     Class "Charms"
         Rarity < Rare
-
-# ==== T15+ Rares ======================================
-Hide
-    Rarity < Rare
-    AreaLevel >= 80
-    Sockets < 2
-
+        
 # ================================================================
