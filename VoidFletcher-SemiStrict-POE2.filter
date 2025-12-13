@@ -392,7 +392,7 @@ Show
         MinimapIcon 0 Red Star
         
 Show
-    BaseType "Esh's Radiance" "Ixchel's Torment" "Rigwald's Ferocity" "Tul's Stillness" "Uhtred's Exodus" "Brutus' Brain" "Ailith's Chimes" "Garukhan's Resolve" "Piety's Mercy" "Doedre's Undoing"
+    BaseType "Esh's Radiance" "Ixchel's Torment" "Rigwald's Ferocity" "Tul's Stillness" "Uhtred's Exodus" "Brutus' Brain" "Ailith's Chimes" "Garukhan's Resolve" "Dominus' Grasp" "Doedre's Undoing"
     #Diamond
             SetFontSize 36
             SetTextColor 84 204 200
@@ -403,7 +403,7 @@ Show
             PlayAlertSound 4 300
             
 Show
-    BaseType "Esh's Radiance" "Ixchel's Torment" "Rigwald's Ferocity" "Tul's Stillness" "Uhtred's Exodus" "Brutus' Brain" "Ailith's Chimes" "Garukhan's Resolve" "Piety's Mercy"
+    BaseType "Esh's Radiance" "Ixchel's Torment" "Rigwald's Ferocity" "Tul's Stillness" "Uhtred's Exodus" "Brutus' Brain" "Ailith's Chimes" "Garukhan's Resolve" "Dominus' Grasp"
     #Diamond
             SetFontSize 36
             SetTextColor 84 204 200
