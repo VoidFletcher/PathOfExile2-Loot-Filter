@@ -381,7 +381,7 @@ Show
 # ==== Support Gems ========================================
 
 Show
-    BaseType "Dialla's Desire" "Rakiata's Flow" "Arjun's Medal" "Uhtred's Augury" "Uul-Netol's Embrace" "Uhtred's Omen" "Atalui's Bloodletting" "Ratha's Assault"
+    BaseType "Dialla's Desire" "Rakiata's Flow" "Arjun's Medal" "Uhtred's Augury" "Uul-Netol's Embrace" "Uhtred's Omen" "Atalui's Bloodletting" "Ratha's Assault" "Garukhan's Resolve"
     #Legendary
         SetFontSize 45
         SetTextColor 255 0 0 255
@@ -910,6 +910,17 @@ Show
             SetTextColor 122 151 254
             SetBorderColor 122 151 254
             SetFontSize 28
+
+Show
+    BaseType "Heavy Belt"
+    Rarity == Normal
+    #Diamond
+        SetFontSize 36
+        SetBorderColor 84 204 200
+        SetBackgroundColor 255 255 255 255
+        MinimapIcon 2 Blue Cross
+        PlayEffect Cyan
+        PlayAlertSound 4 300     
             
 Show
     Class "Ring" "Amulet" "Belt"
@@ -955,27 +966,7 @@ Show
 # ================================================================
 # Hide Low-Tier Bases
 # ================================================================
-# ==== Exclusions ======================================
-# ALl base belts are now worth 2-3ex+ each due to ancients omen + chance.
-Show
-    Class "Belts"
-    Rarity == Normal
-    #Gold
-                SetBorderColor 255 207 132
-                PlayEffect Yellow
-                PlayAlertSound 3 300
-                MinimapIcon 2 Yellow Kite
-                
-Show
-    BaseType "Heavy Belt"
-    Rarity == Normal
-    #Diamond
-        SetFontSize 36
-        SetBorderColor 84 204 200
-        SetBackgroundColor 255 255 255 255
-        MinimapIcon 2 Blue Cross
-        PlayEffect Cyan
-        PlayAlertSound 4 300      
+# ==== Exclusions ======================================             
     
 
 # ==== Armor ======================================
