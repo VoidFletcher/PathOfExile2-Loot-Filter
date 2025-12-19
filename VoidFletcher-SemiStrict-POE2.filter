@@ -381,7 +381,7 @@ Show
 # ==== Support Gems ========================================
 
 Show
-    BaseType "Dialla's Desire" "Rakiata's Flow" "Arjun's Medal" "Uhtred's Augury" "Uul-Netol's Embrace" "Uhtred's Omen" "Atalui's Bloodletting" "Ratha's Assault" "Garukhan's Resolve" "Oisín's Oath"
+    BaseType "Dialla's Desire" "Rakiata's Flow" "Arjun's Medal" "Uhtred's Augury" "Uul-Netol's Embrace" "Uhtred's Omen" "Atalui's Bloodletting" "Ratha's Assault" "Garukhan's Resolve"
     #Legendary
         SetFontSize 45
         SetTextColor 255 0 0 255
@@ -423,7 +423,7 @@ Show
     
 
 Show
-    BaseType "Doedre's Undoing" "Xoph's Pyre" "Einhar's Beastrite" "Tecrod's Revenge" "Zarokh's Refrain" "Paquate's Pact" "Kulemak's Dominion" "Ahn's Citadel" "Tawhoa's Tending" "Sione's Temper" "Uruk's Smelting" 
+    BaseType "Doedre's Undoing" "Xoph's Pyre" "Einhar's Beastrite" "Tecrod's Revenge" "Zarokh's Refrain" "Paquate's Pact" "Kulemak's Dominion" "Ahn's Citadel" "Tawhoa's Tending" "Sione's Temper" "Uruk's Smelting" "Oisín's Oath"
     #Gold
             SetTextColor 255 207 132
             SetBorderColor 255 207 132
