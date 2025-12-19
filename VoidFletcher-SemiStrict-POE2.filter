@@ -381,7 +381,7 @@ Show
 # ==== Support Gems ========================================
 
 Show
-    BaseType "Dialla's Desire" "Rakiata's Flow" "Arjun's Medal" "Uhtred's Augury" "Uul-Netol's Embrace" "Uhtred's Omen" "Atalui's Bloodletting" "Ratha's Assault" "Garukhan's Resolve"
+    BaseType "Dialla's Desire" "Rakiata's Flow" "Arjun's Medal" "Uhtred's Augury" "Uul-Netol's Embrace" "Uhtred's Omen" "Atalui's Bloodletting" "Ratha's Assault" "Garukhan's Resolve" "Oisín's Oath"
     #Legendary
         SetFontSize 45
         SetTextColor 255 0 0 255
