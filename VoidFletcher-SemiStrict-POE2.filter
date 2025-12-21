@@ -194,6 +194,18 @@ Show
 # ================================================================
 
 Show
+    BaseType "Abyss Precursor Tablet"
+    Rarity == Unique
+        #Legendary
+        SetFontSize 45
+        SetTextColor 175 96 37
+        SetBorderColor 255 0 0 255
+        SetBackgroundColor 255 255 255 255
+        PlayAlertSound 6 300
+        PlayEffect Red
+        MinimapIcon 0 Red Star
+
+Show
     BaseType "Precursor Tablet"
     Rarity == Unique
     #Unique Precursor Tablet
@@ -978,7 +990,7 @@ Hide
     ItemLevel < 82
     Sockets < 2
     Quality == 0
-    AreaLevel >= 79
+    AreaLevel >= 71
     
 Show
     Class "Gloves" "Helmet" "Boots" "Belt"
@@ -1002,7 +1014,7 @@ Hide
     ItemLevel < 82
     Sockets < 2
     Quality == 0
-    AreaLevel >= 79
+    AreaLevel >= 71
     
 Show
     Class "Wands" "Sceptre"
@@ -1017,7 +1029,7 @@ Hide
     Rarity <= Rare
     ItemLevel <= 82
     Quality == 0
-    AreaLevel >= 79
+    AreaLevel >= 71
         
 # ==== Flasks ======================================
 # Hide all non-unique flasks.
