@@ -193,7 +193,7 @@ Show
 # ================================================================
 
 Show
-    BaseType "Ultimate Life Flask" "Golden Charm" "Silver Charm" "Silk Robe" "Armoured Vest" "Grand Manchettes" "Armoured Cap" "Fine Bracers" "Ornate Gauntlets" "Heavy Belt" "Jade Amulet" "Shrine Sceptre" "Ashbark Talisman" "Incense Relic" "Vase Relic"
+    BaseType "Ultimate Life Flask" "Golden Charm" "Silver Charm" "Silk Robe" "Altar Robe" "Armoured Vest" "Grand Manchettes" "Armoured Cap" "Fine Bracers" "Ornate Gauntlets" "Heavy Belt" "Jade Amulet" "Shrine Sceptre" "Ashbark Talisman" "Incense Relic" "Vase Relic"
     Rarity == Unique
         #Legendary
         SetFontSize 45
